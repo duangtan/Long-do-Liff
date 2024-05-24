@@ -51,5 +51,17 @@ export class FoodPageComponent implements OnInit {
     }
     return _data;
   }
+  getDetail(foodId: number) {
+    this.apiService.getFoodById(foodId).subscribe(
+      (data) => {
+        // ทำสิ่งที่คุณต้องการกับข้อมูลที่ได้รับคืน เช่น การเปลี่ยนหน้า
+        console.log('Food Detail:', data);
+        // ทำการเปลี่ยนหน้าหรือทำสิ่งอื่นตามต้องการ
+      },
+      (error) => {
+        console.error('Error fetching food detail:', error);
+      }
+    );
+  }
 
 }

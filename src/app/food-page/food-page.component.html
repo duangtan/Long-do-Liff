@@ -1,13 +1,17 @@
 <div class="container">
-    <h2>The Vegan Food</h2>
-    <div class="food-list">
-      <div class="food-item" *ngFor="let food of food_list">
-        <img class="food-img" [src]="food.image" [alt]="food.title + ' Image'">
-        <div class="food-details">
-          <h3 class="food-title">{{ food.title }}</h3>
+  <h2>The Vegan Food</h2>
+  <div class="food-list">
+    <div class="food-item" *ngFor="let food of food_list">
+      <img class="food-img" [src]="food.image" [alt]="food.id + ' Image'">
+      <div class="food-details">
+        <h3 class="food-title">{{ food.title }}</h3>
+        <div class="diff-button">
           <p class="food-difficulty">Difficulty: {{ food.difficulty }}</p>
+          <button type="button" (click)="getDetail(food.id)">See more</button>
         </div>
       </div>
     </div>
   </div>
+</div>
+
 

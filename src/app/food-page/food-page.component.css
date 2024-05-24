@@ -1,54 +1,60 @@
 .container {
-    max-width: 800px;
-    margin: 20px auto;
-  }
-  
-  .food-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  
-  .food-item {
-    width: calc(33.33% - 20px);
-    margin: 10px;
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .food-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-  
-  .food-title {
-    font-size: 18px;
-    margin-bottom: 5px;
-  }
-  
-  .food-difficulty {
-    font-style: italic;
-    color: #888;
-  }
-  
-  /* For desktop screens */
-@media only screen and (min-width: 768px) {
-  .food-item {
-    width: calc(33.33% - 20px);
-  }
-  .food-list {
-    flex-grow: 1; /* ให้ .food-list ขยายขนาดตามพื้นที่ที่ว่างใน flex container */
-  }
+  /* max-width: 800px;
+  margin: 20px auto; */
 }
 
-/* For mobile screens */
-@media only screen and (max-width: 479px) {
-  .food-item {
-    width: calc(100% - 20px);
-  }
+.food-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
+
+.food-item {
+  width: calc(25% - 20px);
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.food-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.food-title {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.diff-button{
+  display: flex;
+  justify-content: space-between;
+}
+
+.diff-button button{
+  background-color: blue;
+}
+
+
+@media only screen and (min-width: 768px) {
+.food-item {
+  width: calc(25% - 20px);
+}
+}
+
+@media only screen and (max-width: 650px) {
+.food-item {
+  width: calc(40% - 20px);
+}
+}
+
+
+@media only screen and (max-width: 400px) {
+.food-item {
+  width: calc(70% - 20px);
+}
+} 
