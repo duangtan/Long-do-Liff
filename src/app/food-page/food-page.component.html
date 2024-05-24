@@ -24,21 +24,15 @@
 
 
 <div class="container">
-  <div class="food-item">
-    <img class="food-img" src="food1.jpg" alt="Food 1 Image">
-    <p class="food-name">Vegan Burger</p>
-    <p>Difficulty: Easy</p>
+    <h2>The Vegan Food</h2>
+    <div class="food-list">
+      <div class="food-item" *ngFor="let food of food_list">
+        <img class="food-img" [src]="food.img_food" [alt]="food.title + ' Image'">
+        <div class="food-details">
+          <h3 class="food-title">{{ food.title }}</h3>
+          <p class="food-difficulty">Difficulty: {{ food.difficulty }}</p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="food-item">
-    <img class="food-img" src="food2.jpg" alt="Food 2 Image">
-    <p class="food-name">Quinoa Salad</p>
-    <p>Difficulty: Medium</p>
-  </div>
-  <div class="food-item">
-    <img class="food-img" src="food3.jpg" alt="Food 3 Image">
-    <p class="food-name">Roasted Vegetable Wrap</p>
-    <p>Difficulty: Hard</p>
-  </div>
-  <!-- Add more food items as needed -->
-</div>
 

@@ -1,21 +1,16 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
+.container {
     max-width: 800px;
     margin: 20px auto;
+  }
+  
+  .food-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
   }
   
   .food-item {
     width: calc(33.33% - 20px);
-    margin-bottom: 20px;
+    margin: 10px;
     background-color: #fff;
     padding: 15px;
     border-radius: 8px;
@@ -29,7 +24,13 @@ body {
     margin-bottom: 10px;
   }
   
-  .food-name {
-    font-weight: bold;
+  .food-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .food-difficulty {
+    font-style: italic;
+    color: #888;
   }
   
