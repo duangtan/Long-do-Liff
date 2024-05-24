@@ -5,6 +5,7 @@ export interface foodlist{
   title : string;
   difficulty : string;
   img_food : any;
+  id : string;
 }
 
 @Component({
@@ -43,6 +44,7 @@ export class FoodPageComponent implements OnInit {
         'title': (data[i]['title']||""),
         'difficulty': (data[i]['difficulty']||""),
         'img_food' : (data[i]['image']||""),
+        'id' : (data[i]['id']||""),
       })
       console.log("This",data.length);
       
