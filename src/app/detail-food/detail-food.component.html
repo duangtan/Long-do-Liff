@@ -23,3 +23,19 @@
   </div>
    -->
    <button type="button" (click)="test()">See more</button>
+   <div *ngFor="let food of food_detail">
+    <h2>{{ food.title }}</h2>
+    <p>Difficulty: {{ food.difficulty }}</p>
+    <img [src]="food.image" alt="Food Image" width="200">
+    <p>ID: {{ food.id }}</p>
+    <p>Portion: {{ food.portion }}</p>
+    <p>Time: {{ food.time }}</p>
+    <p>Description: {{ food.description }}</p>
+    <h3>Ingredients:</h3>
+    <ul>
+      <li *ngFor="let ingredient of food.ingredients.split(';')">{{ ingredient }}</li>
+    </ul>
+    <h3>Method:</h3>
+    <p>{{ food.method }}</p>
+  </div>
+  
