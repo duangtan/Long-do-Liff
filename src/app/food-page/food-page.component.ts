@@ -42,7 +42,7 @@ export class FoodPageComponent implements OnInit {
       _data.push({
         'title': (data[i]['title']||""),
         'difficulty': (data[i]['difficulty']||""),
-        'img_food' : (data[i]['image']),
+        'img_food' : (data[i]['image']||""),
       })
       console.log("This",data.length);
       
