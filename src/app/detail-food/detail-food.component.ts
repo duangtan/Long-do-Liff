@@ -31,17 +31,19 @@ export class DetailFoodComponent implements OnInit {
       this.foodId = params['foodId'];
       console.log('Food Id:', this.foodId);
       // สามารถใช้ this.foodId ในการเรียก API หรือประมวลผลข้อมูลต่อไปได้
+      this.apiService.getFoodById(this.foodId).subscribe((data: any) => {
+        this.food_detail = data; 
+        console.log('Food Douad:',this.food_detail);
+      }, error => {
+        console.error(error);
+      });
     });
-    this.apiService.getFoodById(this.foodId).subscribe((data: any) => {
-      this.food_detail = data; 
-      console.log('Food Douad:',this.food_detail);
-    }, error => {
-      console.error(error);
-    });
+    
   }
   
   test(){
     console.log("FoodID",this.foodId);
+    console.log("FoodID",this.food_detail);
     
     
   }
