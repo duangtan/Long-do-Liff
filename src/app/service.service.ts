@@ -17,7 +17,7 @@ export class ServiceService {
     return this.http.get(url, { headers });
   }
 
-  getFoodById(FoodId: number){
+  getFoodById(FoodId: string){
     const url = 'https://the-vegan-recipes-db.p.rapidapi.com/';
     const headers = {
       'X-RapidAPI-Key': 'da06a436f8msha76c0f760f12566p197ae7jsnf5057645a4b0',

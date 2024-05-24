@@ -51,7 +51,7 @@ export class FoodPageComponent implements OnInit {
     }
     return _data;
   }
-  getDetail(foodId: number) {
+  getDetail(foodId: string) {
     this.apiService.getFoodById(foodId).subscribe(
       (data) => {
         // ทำสิ่งที่คุณต้องการกับข้อมูลที่ได้รับคืน เช่น การเปลี่ยนหน้า
