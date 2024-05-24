@@ -1,33 +1,8 @@
-<!-- <div>
-    <h2>The Vegan Food</h2>
-    <div class="container">
-        <table>
-          <thead>
-            <tr>
-              <th>Image</th>
-              <th>Name</th>
-              <th>Weight</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let food of food_list">
-              <td><img [src]="food.img_food" alt="{{ food.title }} Image"></td>
-              <td>{{ food.title }}</td>
-              <td>{{ food.difficulty }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-</div> -->
-
-
-
 <div class="container">
     <h2>The Vegan Food</h2>
     <div class="food-list">
       <div class="food-item" *ngFor="let food of food_list">
-        <img class="food-img" [src]="food.img_food" [alt]="food.title + ' Image'">
+        <img class="food-img" [src]="food.image" [alt]="food.title + ' Image'">
         <div class="food-details">
           <h3 class="food-title">{{ food.title }}</h3>
           <p class="food-difficulty">Difficulty: {{ food.difficulty }}</p>

@@ -4,7 +4,7 @@ import { ServiceService } from '../service.service';
 export interface foodlist{
   title : string;
   difficulty : string;
-  img_food : any;
+  image : any;
   id : string;
 }
 
@@ -43,7 +43,7 @@ export class FoodPageComponent implements OnInit {
       _data.push({
         'title': (data[i]['title']||""),
         'difficulty': (data[i]['difficulty']||""),
-        'img_food' : (data[i]['image']||""),
+        'image' : (data[i]['image']||""),
         'id' : (data[i]['id']||""),
       })
       console.log("This",data.length);

@@ -6,7 +6,9 @@
   .food-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
+  
   
   .food-item {
     width: calc(33.33% - 20px);
@@ -34,3 +36,19 @@
     color: #888;
   }
   
+  /* For desktop screens */
+@media only screen and (min-width: 768px) {
+  .food-item {
+    width: calc(33.33% - 20px);
+  }
+  .food-list {
+    flex-grow: 1; /* ให้ .food-list ขยายขนาดตามพื้นที่ที่ว่างใน flex container */
+  }
+}
+
+/* For mobile screens */
+@media only screen and (max-width: 479px) {
+  .food-item {
+    width: calc(100% - 20px);
+  }
+}
