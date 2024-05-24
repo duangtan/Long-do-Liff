@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ServiceService } from '../service.service';
 
 export interface fooddetail{
   title : string;
@@ -19,9 +20,11 @@ export interface fooddetail{
   styleUrls: ['./detail-food.component.css']
 })
 export class DetailFoodComponent implements OnInit {
-  foodId: string | undefined;
+  food_detail: fooddetail | null = null;
+  foodId!: string;
+   
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private apiService: ServiceService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -29,7 +32,14 @@ export class DetailFoodComponent implements OnInit {
       console.log('Food Id:', this.foodId);
       // สามารถใช้ this.foodId ในการเรียก API หรือประมวลผลข้อมูลต่อไปได้
     });
+    this.apiService.getFoodById(this.foodId).subscribe((data: any) => {
+      this.food_detail = data; 
+      console.log('Food Douad:',this.food_detail);
+    }, error => {
+      console.error(error);
+    });
   }
+  
   test(){
     console.log("FoodID",this.foodId);
     
