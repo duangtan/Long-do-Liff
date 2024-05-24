@@ -53,19 +53,29 @@ export class FoodPageComponent implements OnInit {
     }
     return _data;
   }
+  // getDetail(foodId: string) {
+  //   this.apiService.getFoodById(foodId).subscribe(
+  //     (data) => {
+  //       console.log('Food Detail:', data);
+  //       this.router.navigate(['/fooddetail']);
+  //     },
+  //     (error) => {
+  //       console.error('Error fetching food detail:', error);
+  //     }
+  //   );
+  // }
   getDetail(foodId: string) {
     this.apiService.getFoodById(foodId).subscribe(
       (data) => {
-        // ทำสิ่งที่คุณต้องการกับข้อมูลที่ได้รับคืน เช่น การเปลี่ยนหน้า
         console.log('Food Detail:', data);
-        // ทำการเปลี่ยนหน้าหรือทำสิ่งอื่นตามต้องการ
-        this.router.navigate(['/fooddetail']); // ให้เปลี่ยนไปยังหน้าใหม่ที่คุณต้องการ
+        this.router.navigate(['/api', foodId]); // เปลี่ยนหน้าไปยัง URL ใหม่พร้อมกับรหัส ID ใน URL
       },
       (error) => {
         console.error('Error fetching food detail:', error);
       }
     );
   }
+  
 
 
 }

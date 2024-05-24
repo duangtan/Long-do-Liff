@@ -6,7 +6,8 @@ import { FoodPageComponent } from './food-page/food-page.component';
 
 const routes: Routes = [
   { path: 'menu', component: FoodPageComponent },
-  { path: 'fooddetail', component: DetailFoodComponent } ,
+  //{ path: 'fooddetail', component: DetailFoodComponent } ,
+  { path: 'api/:foodId', component: DetailFoodComponent },
   { path: '', redirectTo: 'menu', pathMatch: 'full' },
 ];
 
