@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceService } from '../service.service';
 
 export interface fooddetail{
@@ -20,14 +20,25 @@ export interface fooddetail{
   styleUrls: ['./detail-food.component.css']
 })
 export class DetailFoodComponent implements OnInit {
-  foodId: string | undefined;
-
-  constructor(private route: ActivatedRoute,private apiService: ServiceService) { }
-
+  food_detail: fooddetail[] = []; 
+  constructor(private apiService: ServiceService,private router: Router) { }
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.foodId = params['foodId'];
-      console.log('Food Id:', this.foodId);
+    this.apiService.getVegFood().subscribe((data: any) => {
+      this.food_detail = data; 
+      console.log(this.food_detail);
+    }, error => {
+      console.error(error);
+    });
+  }
+  // foodId: string | undefined;
+
+  // constructor(private route: ActivatedRoute,private apiService: ServiceService) { }
+
+  // ngOnInit(): void {
+    
+  //   this.route.params.subscribe(params => {
+  //     this.foodId = params['foodId'];
+  //     console.log('Food Id:', this.foodId);
       // สามารถใช้ this.foodId ในการเรียก API หรือประมวลผลข้อมูลต่อไปได้
       // this.apiService.getFoodById(this.foodId).subscribe(
       //   (data) => {
@@ -38,10 +49,11 @@ export class DetailFoodComponent implements OnInit {
       //     console.error('Error fetching food detail:', error);
       //   }
       // );
-    });
-  }
+  //   });
+  // }
   test(){
-    console.log("FoodID",this.foodId);
+    //console.log("FoodID",this.foodId);
+    
     
     
   }
