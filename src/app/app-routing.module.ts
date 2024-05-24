@@ -2,9 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { DetailFoodComponent } from './detail-food/detail-food.component';
+import { FoodPageComponent } from './food-page/food-page.component';
 
 const routes: Routes = [
-  { path: 'fooddetail', component: DetailFoodComponent } // เพิ่มเส้นทางสำหรับหน้าใหม่
+  { path: 'menu', component: FoodPageComponent },
+  { path: 'fooddetail', component: DetailFoodComponent } ,
+  { path: '', redirectTo: 'menu', pathMatch: 'full' },
 ];
 
 @NgModule({
