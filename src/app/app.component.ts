@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   }
 
   initializeLiff() {
-    liff.init({ liffId: 'YOUR_LIFF_ID' })
+    liff.init({ liffId: '2005378766-8o1j06XX' })
       .then(() => {
         if (liff.isLoggedIn()) {
           this.getProfile();
