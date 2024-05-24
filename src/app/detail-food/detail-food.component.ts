@@ -25,7 +25,7 @@ export class DetailFoodComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.getVegFood().subscribe((data: any) => {
       this.food_detail = data; 
-      console.log(this.food_detail);
+      console.log("FoodIDdetail",this.food_detail);
     }, error => {
       console.error(error);
     });
