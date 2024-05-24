@@ -53,22 +53,12 @@ export class FoodPageComponent implements OnInit {
     }
     return _data;
   }
-  // getDetail(foodId: string) {
-  //   this.apiService.getFoodById(foodId).subscribe(
-  //     (data) => {
-  //       console.log('Food Detail:', data);
-  //       this.router.navigate(['/fooddetail']);
-  //     },
-  //     (error) => {
-  //       console.error('Error fetching food detail:', error);
-  //     }
-  //   );
-  // }
+
   getDetail(foodId: string) {
     this.apiService.getFoodById(foodId).subscribe(
       (data) => {
         console.log('Food Detail:', data);
-        this.router.navigate(['/api', foodId]); // เปลี่ยนหน้าไปยัง URL ใหม่พร้อมกับรหัส ID ใน URL
+        this.router.navigate(['/api', foodId]); 
       },
       (error) => {
         console.error('Error fetching food detail:', error);
