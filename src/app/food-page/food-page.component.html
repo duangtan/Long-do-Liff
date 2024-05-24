@@ -1,1 +1,22 @@
-<p>food-page works!</p>
+<div>
+    <h2>The Vegan Food</h2>
+    <div class="container">
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Weight</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let food of food_list">
+              <td><img [src]="food.img_food" alt="{{ food.title }} Image"></td>
+              <td>{{ food.title }}</td>
+              <td>{{ food.difficulty }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+</div>

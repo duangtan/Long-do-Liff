@@ -1,0 +1,29 @@
+.food-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .food-item {
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+  }
+  
+  .food-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .food-title {
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  
+  .food-difficulty {
+    margin-top: 5px;
+    color: gray;
+  }
+  
