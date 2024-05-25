@@ -59,6 +59,8 @@
   <div *ngIf="food_detail">
     <h1>{{ food_detail.title }}</h1>
     <p>{{ food_detail.description }}</p>
+    <p>Portion: {{ food_detail.portion }}</p>
+    <p>Time: {{ food_detail.time }}</p>
     <h2>Ingredients:</h2>
     <ul>
       <li *ngFor="let ingredient of food_detail.ingredients">{{ ingredient }}</li>
