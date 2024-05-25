@@ -59,7 +59,6 @@
   <div *ngIf="food_detail">
     <h1>{{ food_detail.title }}</h1>
     <p>{{ food_detail.description }}</p>
-    
     <p>Portion: {{ food_detail.portion }}</p>
     <p>Time: {{ food_detail.time }}</p>
     <h2>Ingredients:</h2>
@@ -68,7 +67,7 @@
     </ul>
     <h2>Method:</h2>
     <ol>
-      <li *ngFor="let step of food_detail.method">{{ step }}</li>
+      <li *ngFor="let step of food_detail.method.split('\n')">{{ step }}</li>
     </ol>
     <img [src]="food_detail.image" alt="{{ food_detail.title }}">
   </div>
