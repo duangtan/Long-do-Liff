@@ -34,8 +34,7 @@ export class FoodPageComponent implements OnInit {
       (data) => {
         this.foodData.push(data);
         this.convertData(this.foodData);
-        this.food_list = this.convertData(this.foodData); 
-        //console.log("This",this.food_list);    
+        this.food_list = this.convertData(this.foodData);    
       },
     );
   }
@@ -55,15 +54,6 @@ export class FoodPageComponent implements OnInit {
   }
 
   getDetail(foodId: string) {
-    // this.apiService.getFoodById(foodId).subscribe(
-    //   (data) => {
-    //     //console.log('Food Detail:', data);
-    //     this.router.navigate(['/api', foodId]); 
-    //   },
-    //   (error) => {
-    //     console.error('Error fetching food detail:', error);
-    //   }
-    // );
     this.router.navigate(['/api', foodId]); 
   }
   

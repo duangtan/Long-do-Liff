@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceService } from '../service.service';
 
 export interface FoodDetail{
@@ -24,7 +24,7 @@ export class DetailFoodComponent implements OnInit {
   foodId!: string;
    
 
-  constructor(private apiService: ServiceService,private route: ActivatedRoute) { }
+  constructor(private apiService: ServiceService,private route: ActivatedRoute,private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -45,12 +45,8 @@ export class DetailFoodComponent implements OnInit {
     );
   }
   
-  test(){
-    //console.log("FoodID",this.foodId);
-    //console.log("FoodDetail: ",this.food_detail);
-    //console.log("FoodID",this.food_detail);
-
-    
+  goHome(){
+    this.router.navigate(['/menu']); 
   }
 
   convertData(data:any):FoodDetail{

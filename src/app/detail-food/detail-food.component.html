@@ -1,61 +1,11 @@
-<!-- <p>detail-food works!</p>
-<div class="recipe">
-    <h2>{{ recipe.title }}</h2>
-    <p>Difficulty: {{ recipe.difficulty }}</p>
-    <p>Portion: {{ recipe.portion }}</p>
-    <p>Time: {{ recipe.time }}</p>
-    <p>Description: {{ recipe.description }}</p>
-  
-    <img [src]="recipe.image" alt="{{ recipe.title }}" />
-  
-    <h3>Ingredients:</h3>
-    <ul>
-      <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
-    </ul>
-  
-    <h3>Method:</h3>
-    <ol>
-      <li *ngFor="let step of recipe.method let i = index">
-          {{recipe.method[i]['Step 1']}}
-          
-      </li>
-    </ol>
+<div class="header">
+  <div class="logo">
+    <img src="assets/images/LD-logo.png" alt="Example Image">
   </div>
-   -->
-   <button type="button" (click)="test()">See more</button>
-   <!-- <div *ngFor="let food of food_detail">
-    <h2>{{ food.title }}</h2>
-    <p>Difficulty: {{ food.difficulty }}</p>
-    <img [src]="food.image" alt="Food Image" width="200">
-    <p>ID: {{ food.id }}</p>
-    <p>Portion: {{ food.portion }}</p>
-    <p>Time: {{ food.time }}</p>
-    <p>Description: {{ food.description }}</p>
-    <h3>Ingredients:</h3>
-    <ul>
-      <li *ngFor="let ingredient of food.ingredients.split(';')">{{ ingredient }}</li>
-    </ul>
-    <h3>Method:</h3>
-    <p>{{ food.method }}</p>
+  <div class="home-button">
+    <button (click)="goHome()">Home</button>
   </div>
-   -->
-
-   <!-- <div *ngIf="foodDetail">
-    <h2>{{ foodDetail.title }}</h2>
-    <p>Difficulty: {{ foodDetail.difficulty }}</p>
-    <img [src]="foodDetail.image" alt="Food Image" width="200">
-    <p>ID: {{ foodDetail.id }}</p>
-    <p>Portion: {{ foodDetail.portion }}</p>
-    <p>Time: {{ foodDetail.time }}</p>
-    <p>Description: {{ foodDetail.description }}</p>
-    <h3>Ingredients:</h3>
-    <ul>
-      <li *ngFor="let ingredient of foodDetail.ingredients.split(';')">{{ ingredient }}</li>
-    </ul>
-    <h3>Method:</h3>
-    <p>{{ foodDetail.method }}</p>
-  </div> -->
-
+</div>
   <div *ngIf="food_detail">
     <div class="detail-header">
       <h2>{{ food_detail.title }}</h2>
