@@ -66,10 +66,6 @@
     <ul>
       <li *ngFor="let ingredient of food_detail.ingredients">{{ ingredient }}</li>
     </ul>
-    <!-- <h2>Method:</h2>
-    <ol>
-      <li *ngFor="let step of food_detail.method.split('\n')">{{ step }}</li>
-    </ol> -->
     <h2>Method:</h2>
     <ol>
       <li *ngFor="let step of food_detail.method">{{ step }}</li>
