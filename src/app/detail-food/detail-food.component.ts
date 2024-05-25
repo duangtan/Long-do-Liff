@@ -53,24 +53,18 @@ export class DetailFoodComponent implements OnInit {
     
   }
 
-  convertData(data:any):any[]{
-    let _datadetail =[];
-    for(let i=0;i<data.length;i++){
-      _datadetail.push({
-        'title': (data[i]['title']||""),
-        'difficulty': (data[i]['difficulty']||""),
-        'image' : (data[i]['image']||""),
-        'id' : (data[i]['id']||""),
-        'portion' : (data[i]['portion']||""),
-        'time' : (data[i]['time']||""),
-        'description' : (data[i]['description']||""),
-        'ingredients' : (data[i]['ingredients']||""),
-        'method' : (data[i]['method']||""),
-      })
-      console.log("This",data.length);
-      
-    }
-    return _datadetail;
+  convertData(data:any):FoodDetail{
+    return {
+      title: data.title || "",
+      difficulty: data.difficulty || "",
+      image: data.image || "",
+      id: data.id || "",
+      portion: data.portion || "",
+      time: data.time || "",
+      description: data.description || "",
+      ingredients: data.ingredients.join("\n") || "", // แปลงอาเรย์ของส่วนประกอบให้เป็น string โดยใช้ join
+      method: data.method.map((step: any) => Object.values(step)[0]).join("\n") || "" // แปลงอาเรย์ของวิธีการทำเป็น string โดยใช้ map เพื่อดึงค่าของขั้นตอนแล้วใช้ join
+    };
   }
 
 }
