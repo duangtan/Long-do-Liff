@@ -67,7 +67,11 @@
     </ul>
     <h2>Method:</h2>
     <ol>
-      <li *ngFor="let step of food_detail.method.split('\n')">{{ step }}</li>
+      <li *ngFor="let step of food_detail.method">
+        <span *ngFor="let value of step | keyvalue">
+          {{ value.key }}: {{ value.value }}
+        </span>
+      </li>
     </ol>
     <img [src]="food_detail.image" alt="{{ food_detail.title }}">
   </div>
