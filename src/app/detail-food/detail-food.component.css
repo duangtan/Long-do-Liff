@@ -1,0 +1,43 @@
+
+.detail-container {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 80px;
+    box-sizing: border-box;
+    
+  }
+  
+  .detail-header {
+    text-align: center;
+  }
+  
+  .detail-header h2 {
+    margin-bottom: 10px;
+  }
+  
+  .detail-header img {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px; /* Constrain the image height */
+    border-radius: 8px;
+    object-fit: cover; /* Ensures the image covers the area properly */
+  }
+  
+  .detail-info p {
+    margin: 5px 0;
+  }
+  
+  .detail-ingredients ul,
+  .detail-method ol {
+    padding-left: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .detail-container {
+      padding: 15px;
+    }
+  }
+  
