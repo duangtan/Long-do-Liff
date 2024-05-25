@@ -53,7 +53,7 @@ export class DetailFoodComponent implements OnInit {
   
   test(){
     console.log("FoodID",this.foodId);
-    console.log("FoodID",this.foodId);
+    console.log("FoodID",this.food_detail);
     
   }
 
