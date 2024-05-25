@@ -8,7 +8,7 @@ import liff from '@line/liff';
 })
 export class AppComponent implements OnInit {
   title = 'my-liff-app';
-
+  
   ngOnInit() {
     this.initializeLiff();
   }
@@ -36,5 +36,19 @@ export class AppComponent implements OnInit {
       .catch((err: any) => {
         console.error('Error getting profile', err);
       });
+  }
+  sendMessage(userId: string, message: string) {
+    liff.sendMessages([
+      {
+        'type': 'text',
+        'text': message
+      }
+    ])
+    .then(() => {
+      console.log('Message sent');
+    })
+    .catch((err: any) => {
+      console.error('Error sending message', err);
+    });
   }
 }
