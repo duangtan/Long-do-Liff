@@ -30,13 +30,14 @@
   font-size: 18px;
   margin-bottom: 5px;
 }
-.diff-button{
+/* .diff-button{
   display: flex;
   justify-content: space-between;
-}
+} */
 
-.diff-button button{
-  background-color: rgb(0, 255, 42);
+.food-details button{
+  background-color: rgb(250, 197, 83);
+  width: 100%;
 }
 
 

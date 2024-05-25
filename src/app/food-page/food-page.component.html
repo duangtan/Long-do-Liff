@@ -5,10 +5,10 @@
       <img class="food-img" [src]="food.image" [alt]="food.id + ' Image'">
       <div class="food-details">
         <h3 class="food-title">{{ food.title }}</h3>
-        <div class="diff-button">
+        <!-- <div class="diff-button"> -->
           <p class="food-difficulty">Difficulty: {{ food.difficulty }}</p>
           <button type="button" (click)="getDetail(food.id)">See more</button>
-        </div>
+        <!-- </div> -->
       </div>
     </div>
   </div>
