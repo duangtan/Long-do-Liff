@@ -55,4 +55,15 @@
     <h3>Method:</h3>
     <p>{{ foodDetail.method }}</p>
   </div> -->
+
+  <div *ngIf="food_detail">
+    <h1>{{ food_detail.title }}</h1>
+    <img [src]="food_detail.image" alt="{{ food_detail.title }}">
+    <p><strong>Difficulty:</strong> {{ food_detail.difficulty }}</p>
+    <p><strong>Portion:</strong> {{ food_detail.portion }}</p>
+    <p><strong>Time:</strong> {{ food_detail.time }}</p>
+    <p><strong>Description:</strong> {{ food_detail.description }}</p>
+    <p><strong>Ingredients:</strong> {{ food_detail.ingredients }}</p>
+    <p><strong>Method:</strong> {{ food_detail.method }}</p>
+  </div>
   

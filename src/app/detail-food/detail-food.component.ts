@@ -37,44 +37,40 @@ export class DetailFoodComponent implements OnInit {
     this.apiService.getFoodById(foodId).subscribe(
       (data: FoodDetail) => {
         this.food_detail = data;  
+        this.convertData(this.food_detail);
       },
       (error) => {
         console.error('Error fetching food details:', error);
       }
     );
-    // this.apiService.getFoodById(foodId).subscribe(
-    //   (data) => {
-    //     this.pokemonData.push(data);
-    //     this.convertData(this.pokemonData);
-    //     this.pokemon_list = this.convertData(this.pokemonData);     
-    //   },
-    // );
   }
   
   test(){
     console.log("FoodID",this.foodId);
+    console.log("FoodDetail: ",this.food_detail);
     console.log("FoodID",this.food_detail);
+
     
   }
 
- 
-  // convertData(data:any):any[]{
-  //   let _data =[];
-  //   for(let i=0;i<data.length;i++){
-  //     _data.push({
-  //       'title': (data[i]['title']||""),
-  //       'difficulty': (data[i]['difficulty']||""),
-  //       'image' : (data[i]['image']||""),
-  //       'id' : (data[i]['id']||""),
-  //       'portion' : (data[i]['portion']||""),
-  //       'time' : (data[i]['time']||""),
-  //       'description' : string;
-  //       'ingredients' : string;
-  //       'method' : string;
-  //     })
-  //     console.log("This",data.length);
+  convertData(data:any):any[]{
+    let _datadetail =[];
+    for(let i=0;i<data.length;i++){
+      _datadetail.push({
+        'title': (data[i]['title']||""),
+        'difficulty': (data[i]['difficulty']||""),
+        'image' : (data[i]['image']||""),
+        'id' : (data[i]['id']||""),
+        'portion' : (data[i]['portion']||""),
+        'time' : (data[i]['time']||""),
+        'description' : (data[i]['description']||""),
+        'ingredients' : (data[i]['ingredients']||""),
+        'method' : (data[i]['method']||""),
+      })
+      console.log("This",data.length);
       
-  //   }
-  //   return _data;
-  // }
+    }
+    return _datadetail;
+  }
+
 }
