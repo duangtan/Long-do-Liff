@@ -58,6 +58,7 @@
 
   <div *ngIf="food_detail">
     <h1>{{ food_detail.title }}</h1>
+    <img [src]="food_detail.image" alt="{{ food_detail.title }}">
     <p>{{ food_detail.description }}</p>
     <p>Portion: {{ food_detail.portion }}</p>
     <p>Time: {{ food_detail.time }}</p>
@@ -73,7 +74,7 @@
         </span>
       </li>
     </ol>
-    <img [src]="food_detail.image" alt="{{ food_detail.title }}">
+    
   </div>
   
   
