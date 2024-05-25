@@ -29,7 +29,7 @@ export class DetailFoodComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.foodId = params['foodId'];
-      console.log('Food Id:', this.foodId);
+      //console.log('Food Id:', this.foodId);
       this.getFoodDetail(this.foodId);
     });
   }
@@ -46,9 +46,9 @@ export class DetailFoodComponent implements OnInit {
   }
   
   test(){
-    console.log("FoodID",this.foodId);
-    console.log("FoodDetail: ",this.food_detail);
-    console.log("FoodID",this.food_detail);
+    //console.log("FoodID",this.foodId);
+    //console.log("FoodDetail: ",this.food_detail);
+    //console.log("FoodID",this.food_detail);
 
     
   }
