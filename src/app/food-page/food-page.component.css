@@ -17,6 +17,9 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .food-img {
@@ -30,10 +33,6 @@
   font-size: 18px;
   margin-bottom: 5px;
 }
-/* .diff-button{
-  display: flex;
-  justify-content: space-between;
-} */
 
 .food-details button{
   background-color: rgb(250, 197, 83);
@@ -51,6 +50,7 @@
 @media only screen and (max-width: 650px) {
 .food-item {
   width: calc(40% - 20px);
+  width: 300px;
 }
 }
 

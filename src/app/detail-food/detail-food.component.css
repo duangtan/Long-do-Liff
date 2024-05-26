@@ -156,10 +156,7 @@
 .summary-item {
     text-align: center;
     flex: 1;
-    border-right: 1px solid white;
-}
-.summary-item:not(:last-child) {
-  border-right: none;
+    border: 1px solid white;
 }
 
 .summary-item h3 {
@@ -201,11 +198,6 @@
 
 /* Responsive design */
 @media (max-width: 600px) {
-    .header-bar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
     .content {
         padding: 10px;
     }
@@ -217,13 +209,10 @@
 
     .summary-item {
         margin-bottom: 10px;
-        border-right: none;
         border-bottom: 1px solid white;
         width: 100%;
     }
-    .summary-item:not(:last-child) {
-      border-bottom: none;
-  }
+    
 }
 
 
