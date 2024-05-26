@@ -168,7 +168,7 @@
     font-size: 14px;
 }
 
-.add-program-button {
+.add-fav-button {
     width: 100%;
     background-color: #000000;
     border: none;
@@ -180,7 +180,7 @@
     cursor: pointer;
 }
 
-.add-program-button:hover {
+.add-fav-button:hover {
     background-color: #1a1919;
 }
 
