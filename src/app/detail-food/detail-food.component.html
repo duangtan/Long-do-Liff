@@ -1,4 +1,4 @@
-<div *ngIf="food_detail">
+<!-- <div *ngIf="food_detail">
   <div class="detail-container">
     <div class="header">
       <div class="logo">
@@ -35,7 +35,48 @@
     </div>
   </div>
   </div>
+   -->
 
-  
-  
-  
+   <div class="header-bar">
+    <button onclick="goHome()">&lt;</button>
+    <h2>Detail Food</h2>
+  </div>
+  <div class="content">
+    <div class="detail-header">
+      <img [src]="food_detail.image" alt="{{ food_detail.title }}">
+    </div>
+    <div class="food-details">
+      <h2>{{ food_detail.title }}</h2>
+      <p><strong>Description:</strong> {{ food_detail.description }}</p>
+    </div>
+    <div class="food-summary">
+      <div class="summary-item">
+        <h3>Portion</h3>
+        <p>{{ food_detail..portion }}</p>
+      </div>
+      <div class="summary-item">
+        <h3>Time</h3>
+        <p>{{ food_detail..time }}</p>
+      </div>
+      <div class="summary-item">
+        <h3>Difficulty</h3>
+        <p>{{ food_detail..difficulty }}</p>
+      </div>
+      <div class="detail-ingredients">
+        <h3>Ingredients:</h3>
+        <ul>
+          <li *ngFor="let ingredient of food_detail.ingredients">{{ ingredient }}</li>
+        </ul>
+      </div>
+      <div class="detail-method">
+        <h3>Method:</h3>
+      <ol>
+        <li *ngFor="let step of food_detail.method">
+          <span *ngFor="let value of step | keyvalue">
+            {{ value.key }}: {{ value.value }}
+          </span>
+        </li>
+      </ol>
+      </div>
+      <button class="add-program-button">Add to favorite</button>
+    </div>

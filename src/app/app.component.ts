@@ -32,24 +32,24 @@ export class AppComponent implements OnInit {
       .then(profile => {
         console.log(profile);
         // เพิ่มโค้ดเพื่อแสดงโปรไฟล์หรือใช้ข้อมูลโปรไฟล์ที่ได้ตามต้องการ
-        this.sendMessage(profile.userId, "สวัสดีครับ/ค่ะ");
+        //this.sendMessage(profile.userId, "สวัสดีครับ/ค่ะ");
       })
       .catch((err: any) => {
         console.error('Error getting profile', err);
       });
   }
-  sendMessage(userId: string, message: string) {
-    liff.sendMessages([
-      {
-        'type': 'text',
-        'text': message
-      }
-    ])
-    .then(() => {
-      console.log('Message sent');
-    })
-    .catch((err: any) => {
-      console.error('Error sending message', err);
-    });
-  }
+  // sendMessage(userId: string, message: string) {
+  //   liff.sendMessages([
+  //     {
+  //       'type': 'text',
+  //       'text': message
+  //     }
+  //   ])
+  //   .then(() => {
+  //     console.log('Message sent');
+  //   })
+  //   .catch((err: any) => {
+  //     console.error('Error sending message', err);
+  //   });
+  // }
 }
