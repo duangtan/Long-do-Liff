@@ -36,8 +36,8 @@
   </div>
   </div>
    -->
-
-   <div class="header-bar">
+<div *ngIf="food_detail">
+  <div class="header-bar">
     <button onclick="goHome()">&lt;</button>
     <h2>Detail Food</h2>
   </div>
@@ -80,3 +80,4 @@
       </div>
       <button class="add-program-button">Add to favorite</button>
     </div>
+  </div>
