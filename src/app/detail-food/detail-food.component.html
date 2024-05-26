@@ -41,14 +41,17 @@
     <button onclick="goHome()">&lt;</button>
     <h2>Detail Food</h2>
   </div>
+
   <div class="content">
     <div class="detail-header">
       <img [src]="food_detail.image" alt="{{ food_detail.title }}">
     </div>
+
     <div class="food-details">
       <h2>{{ food_detail.title }}</h2>
       <p><strong>Description:</strong> {{ food_detail.description }}</p>
     </div>
+
     <div class="food-summary">
       <div class="summary-item">
         <h3>Portion</h3>
@@ -62,12 +65,15 @@
         <h3>Difficulty</h3>
         <p>{{ food_detail.difficulty }}</p>
       </div>
+    </div>
+
       <div class="detail-ingredients">
         <h3>Ingredients:</h3>
         <ul>
           <li *ngFor="let ingredient of food_detail.ingredients">{{ ingredient }}</li>
         </ul>
       </div>
+
       <div class="detail-method">
         <h3>Method:</h3>
       <ol>
