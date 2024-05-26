@@ -168,6 +168,17 @@
     margin: 5px 0;
     font-size: 14px;
 }
+.detail-method ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.detail-method ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 
 .add-fav-button {
     width: 100%;
