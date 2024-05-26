@@ -18,7 +18,7 @@ export interface foodlist{
 export class FoodPageComponent implements OnInit {
   selectedDifficulty: string = 'All';
   food_list: foodlist[] = []; 
-  filteredFoodList: foodlist[] = [];
+  //filteredFoodList: foodlist[] = [];
 
   constructor(private apiService: ServiceService,private router: Router) { }
 
@@ -40,13 +40,13 @@ export class FoodPageComponent implements OnInit {
       },
     );
   }
-  filterFoodList(): void {
-    if (this.selectedDifficulty === 'All') {
-      this.filteredFoodList = this.food_list;
-    } else {
-      this.filteredFoodList = this.food_list.filter(food => food.difficulty === this.selectedDifficulty);
-    }
-  }
+  // filterFoodList(): void {
+  //   if (this.selectedDifficulty === 'All') {
+  //     this.filteredFoodList = this.food_list;
+  //   } else {
+  //     this.filteredFoodList = this.food_list.filter(food => food.difficulty === this.selectedDifficulty);
+  //   }
+  // }
   convertData(data:any):any[]{
     let _data =[];
     for(let i=0;i<data.length;i++){
