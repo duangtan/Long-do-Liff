@@ -71,8 +71,8 @@
 
    body {
     font-family: Arial, sans-serif;
-    background-color: #121212; /* พื้นหลังสีดำ */
-    color: #ffffff; /* ข้อความสีขาว */
+    background-color: #121212; 
+    color: #ffffff; 
     margin: 0;
     padding: 0;
 }

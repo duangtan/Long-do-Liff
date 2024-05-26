@@ -6,8 +6,8 @@
       <div class="food-details">
         <h3 class="food-title">{{ food.title }}</h3>
           <p class="food-difficulty">Difficulty: {{ food.difficulty }}</p>
+          <button type="button" (click)="getDetail(food.id)">See more</button>
       </div>
-      <div><button type="button" (click)="getDetail(food.id)">See more</button></div>
     </div>
   </div>
 </div>
