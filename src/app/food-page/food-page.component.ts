@@ -16,8 +16,9 @@ export interface foodlist{
   styleUrls: ['./food-page.component.css']
 })
 export class FoodPageComponent implements OnInit {
-  selectedDifficulty: string = 'difficulty';
+  selectedDifficulty: string = 'All';
   food_list: foodlist[] = []; 
+  filteredFoodList: foodlist[] = [];
 
   constructor(private apiService: ServiceService,private router: Router) { }
 
@@ -38,6 +39,13 @@ export class FoodPageComponent implements OnInit {
         this.food_list = this.convertData(this.foodData);    
       },
     );
+  }
+  filterFoodList(): void {
+    if (this.selectedDifficulty === 'All') {
+      this.filteredFoodList = this.food_list;
+    } else {
+      this.filteredFoodList = this.food_list.filter(food => food.difficulty === this.selectedDifficulty);
+    }
   }
   convertData(data:any):any[]{
     let _data =[];

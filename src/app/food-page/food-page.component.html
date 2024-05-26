@@ -1,9 +1,9 @@
 <div class="container">
   <h2>The Vegan Food</h2>
   <div class="food-list">
-    <div class="dropdown" id="dropdown-container">
+    <div class="dropdown">
       <label for="select-difficulty">Difficulty</label><br>
-      <select id="select-difficulty" [(ngModel)]="selectedDifficulty">
+      <select id="select-difficulty" [(ngModel)]="selectedDifficulty" (change)="filterFoodList()">
         <option value="All">All</option>
         <option value="Easy">Easy</option>
         <option value="Medium">Medium</option>
