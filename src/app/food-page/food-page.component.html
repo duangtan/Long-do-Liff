@@ -1,5 +1,18 @@
 <div class="container">
-  <h2>The Vegan Food</h2>
+  <div>
+    <h2>The Vegan Food</h2>
+    <div class="dropdown">
+      <label for="select-difficulty">Enabled</label><br>
+      <select id="difficulty" [(ngModel)]="selectedDifficulty">
+          <option value="difficulty">difficulty</option>
+          <option value="All">All</option>
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+      </select>
+  </div>
+  <p>Selected difficulty: {{ selectedDifficulty }}</p>
+  </div>
+  
   <div class="food-list">
     <div class="food-item" *ngFor="let food of food_list">
       <img class="food-img" [src]="food.image" [alt]="food.id + ' Image'">

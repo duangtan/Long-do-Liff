@@ -16,6 +16,7 @@ export interface foodlist{
   styleUrls: ['./food-page.component.css']
 })
 export class FoodPageComponent implements OnInit {
+  selectedDifficulty: string = 'difficulty';
   food_list: foodlist[] = []; 
 
   constructor(private apiService: ServiceService,private router: Router) { }
