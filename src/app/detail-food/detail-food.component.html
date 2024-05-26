@@ -79,7 +79,7 @@
       <ol>
         <li *ngFor="let step of food_detail.method">
           <span *ngFor="let value of step | keyvalue">
-            {{ value.key }}: {{ value.value }}
+            <strong>{{ value.key }}:</strong> {{ value.value }}
           </span>
         </li>
       </ol>

@@ -158,6 +158,9 @@
     flex: 1;
     border-right: 1px solid white;
 }
+.summary-item:not(:last-child) {
+  border-right: none;
+}
 
 .summary-item h3 {
     margin: 5px 0;
@@ -218,6 +221,9 @@
         border-bottom: 1px solid white;
         width: 100%;
     }
+    .summary-item:not(:last-child) {
+      border-bottom: none;
+  }
 }
 
 
