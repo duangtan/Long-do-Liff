@@ -79,15 +79,16 @@ export class FoodPageComponent implements OnInit {
       if (index !== -1) {
         this.favoriteFoods.splice(index, 1);
       }
+      this.localStorageService.setItem('favoriteFoods', this.favoriteFoods);
     }
   }
-  const index = this.favoriteFoods.indexOf(foodId);
-    if (index !== -1) {
-      this.favoriteFoods.splice(index, 1);
-    } else {
-      this.favoriteFoods.push(foodId);
-    }
-    this.localStorageService.setItem('favoriteFoods', this.favoriteFoods);
+  // const index = this.favoriteFoods.indexOf(foodId);
+  //   if (index !== -1) {
+  //     this.favoriteFoods.splice(index, 1);
+  //   } else {
+  //     this.favoriteFoods.push(foodId);
+  //   }
+  //   this.localStorageService.setItem('favoriteFoods', this.favoriteFoods);
 }
 showFavoriteFoods() {
   const favoriteFoodItems: foodlist[] = [];
