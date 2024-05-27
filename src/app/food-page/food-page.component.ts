@@ -59,13 +59,35 @@ export class FoodPageComponent implements OnInit {
     this.router.navigate(['/api', foodId]); 
   }
 
-
+  favoriteFoods: string[] = [];
   isFavorite = false;
 
   toggleFavorite(foodId: string) {
     const food = this.food_list.find(food => food.id === foodId);
     if (food) {
-      food.isFavorite = !food.isFavorite;
+    food.isFavorite = !food.isFavorite;
+    if (food.isFavorite) {
+      // เพิ่ม foodId เข้าไปในอาร์เรย์ favoriteFoods ถ้าอาหารถูกเลือกเป็น favorite
+      this.favoriteFoods.push(foodId);
+    } else {
+      // ถ้ายกเลิกการเลือกเป็น favorite ให้ลบ foodId ออกจากอาร์เรย์ favoriteFoods
+      const index = this.favoriteFoods.indexOf(foodId);
+      if (index !== -1) {
+        this.favoriteFoods.splice(index, 1);
+      }
     }
   }
+}
+showFavoriteFoods() {
+  // สร้างอาร์เรย์เก็บข้อมูลที่ตรงกับ favoriteFoods
+  const favoriteFoodItems: foodlist[] = [];
+  for (const foodId of this.favoriteFoods) {
+    const food = this.food_list.find(item => item.id === foodId);
+    if (food) {
+      favoriteFoodItems.push(food);
+    }
+  }
+  // แสดงผลข้อมูลที่ตรงกับ favoriteFoods
+  console.log(favoriteFoodItems);
+}
 }
