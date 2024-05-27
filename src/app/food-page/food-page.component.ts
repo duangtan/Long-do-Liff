@@ -20,7 +20,9 @@ export class FoodPageComponent implements OnInit {
   selectedDifficulty: string = 'All';
   food_list: foodlist[] = []; 
 
-  constructor(private apiService: ServiceService,private router: Router) { }
+  constructor(private apiService: ServiceService,private router: Router) {
+    this.displayedFoods = [...this.food_list];
+  }
 
   ngOnInit(): void {
     this.apiService.getVegFood().subscribe((data: any) => {
@@ -99,6 +101,8 @@ onOptionChange() {
   // เรียกใช้งานฟังก์ชันหรือทำสิ่งที่ต้องการเมื่อมีการเลือกตัวเลือกใหม่
 }
 displayedFoods: foodlist[] = [];
+
+
 updateDisplayedFoods() {
   if (this.selectedOption === 'favorite') {
     this.displayedFoods = this.showFavoriteFoods();
