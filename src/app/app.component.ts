@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
       });
   }
 
-  logout() {
-    liff.logout();
-  }
+  // logout() {
+  //   liff.logout();
+  // }
 }

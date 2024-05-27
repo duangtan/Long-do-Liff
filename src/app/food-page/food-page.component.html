@@ -1,6 +1,12 @@
 <div class="container">
   <h2>The Vegan Food</h2>
-  <button (click)="logout()">ออกจากระบบ</button>
+  <!-- <button (click)="logout()">ออกจากระบบ</button> -->
+  <div class="select-fav">
+    <select [(ngModel)]="selectedOption" (change)="onOptionChange()">
+      <option value="all">All</option>
+      <option value="favorite">Favorite</option>
+    </select>
+</div>
   <button type="button" (click)="showFavoriteFoods()">Favorite Food</button>
   <div class="food-list">
     <div class="food-item" *ngFor="let food of food_list">

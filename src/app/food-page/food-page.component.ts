@@ -86,4 +86,14 @@ showFavoriteFoods() {
   }
   console.log(favoriteFoodItems);
 }
+
+selectedOption: string = 'all';
+onOptionChange() {
+  console.log('Selected option:', this.selectedOption);
+    
+    if (this.selectedOption === 'favorite') {
+      this.showFavoriteFoods();
+    }
+  // เรียกใช้งานฟังก์ชันหรือทำสิ่งที่ต้องการเมื่อมีการเลือกตัวเลือกใหม่
+}
 }
