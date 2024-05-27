@@ -37,4 +37,8 @@ export class AppComponent implements OnInit {
         console.error('Error getting profile', err);
       });
   }
+
+  logout() {
+    liff.logout();
+  }
 }
