@@ -21,6 +21,9 @@ export class FoodPageComponent implements OnInit {
   selectedDifficulty: string = 'All';
   food_list: foodlist[] = []; 
   displayedFoods: foodlist[] = [];
+  foodData : any[] = [];
+  favoriteFoods: string[] = [];
+  isFavorite = false;
 
   constructor(private apiService: ServiceService,private router: Router,private localStorageService: LocalStorageService) {
    
@@ -31,12 +34,14 @@ export class FoodPageComponent implements OnInit {
       this.food_list = data; 
       this.displayedFoods = [...this.food_list]; 
       this.favoriteFoods = this.localStorageService.getItem('favoriteFoods') || [];
+      this.updateFavoriteStatus();
+      this.updateDisplayedFoods();
       console.log(this.food_list);
     }, error => {
       console.error(error);
     });
   }
-  foodData : any[] = [];
+  
   getFoodData(): void {
     this.apiService.getVegFood().subscribe(
       (data) => {
@@ -65,56 +70,51 @@ export class FoodPageComponent implements OnInit {
     this.router.navigate(['/api', foodId]); 
   }
 
-  favoriteFoods: string[] = [];
-  isFavorite = false;
+  updateFavoriteStatus(): void {
+    this.food_list.forEach(food => {
+      food.isFavorite = this.favoriteFoods.includes(food.id);
+    });
+  }
 
   toggleFavorite(foodId: string) {
     const food = this.food_list.find(food => food.id === foodId);
     if (food) {
-    food.isFavorite = !food.isFavorite;
-    if (food.isFavorite) {
-      this.favoriteFoods.push(foodId);
-    } else {
-      const index = this.favoriteFoods.indexOf(foodId);
-      if (index !== -1) {
-        this.favoriteFoods.splice(index, 1);
+      food.isFavorite = !food.isFavorite;
+      if (food.isFavorite) {
+        this.favoriteFoods.push(foodId);
+      } else {
+        const index = this.favoriteFoods.indexOf(foodId);
+        if (index !== -1) {
+          this.favoriteFoods.splice(index, 1);
+        }
       }
+      this.localStorageService.setItem('favoriteFoods', this.favoriteFoods);
     }
-  }
-  const index = this.favoriteFoods.indexOf(foodId);
-    if (index !== -1) {
-      this.favoriteFoods.splice(index, 1);
-    } else {
-      this.favoriteFoods.push(foodId);
-    }
-    this.localStorageService.setItem('favoriteFoods', this.favoriteFoods);
 }
 showFavoriteFoods() {
-  const favoriteFoodItems: foodlist[] = [];
-  for (const foodId of this.favoriteFoods) {
-    const food = this.food_list.find(item => item.id === foodId);
-    if (food) {
-      favoriteFoodItems.push(food);
-    }
-  }
-  console.log(favoriteFoodItems);
-  return favoriteFoodItems;
+  // const favoriteFoodItems: foodlist[] = [];
+  // for (const foodId of this.favoriteFoods) {
+  //   const food = this.food_list.find(item => item.id === foodId);
+  //   if (food) {
+  //     favoriteFoodItems.push(food);
+  //   }
+  // }
+  // console.log(favoriteFoodItems);
+  // return favoriteFoodItems;
+  return this.food_list.filter(food => this.favoriteFoods.includes(food.id));
 }
 
 selectedOption: string = 'all';
 onOptionChange() {
   console.log('Selected option:', this.selectedOption);
-    if (this.selectedOption === 'favorite') {
-      this.showFavoriteFoods();
-    }
-    this.updateDisplayedFoods();
+  this.updateDisplayedFoods();
 }
 
-updateDisplayedFoods() {
+updateDisplayedFoods(): void {
   if (this.selectedOption === 'favorite') {
     this.displayedFoods = this.showFavoriteFoods();
   } else {
-    this.displayedFoods = [...this.food_list]; 
+    this.displayedFoods = [...this.food_list];
   }
 }
 }
