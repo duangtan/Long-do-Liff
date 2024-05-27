@@ -1,3 +1,13 @@
+.header-bar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #1f1f1f;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  color: white;
+}
 .food-list {
   display: flex;
   flex-wrap: wrap;
