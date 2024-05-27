@@ -1,44 +1,144 @@
-.food-item {
-    width: calc(25% - 20px);
-    margin: 10px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .food-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-  
-  .food-title {
-    font-size: 18px;
-    margin-bottom: 5px;
-  }
-  
-  .food-details button{
-    background-color: rgb(250, 197, 83);
-    width: 100%;
-    padding: 10px;
-  }
-  .container-fav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
-   
-  }
-  .container-fav button{
-    background-color: white; 
-    border: none; 
-    background: none; 
-    cursor: pointer;
-    width: 15%;
-  }
+.navbar {
+  background-color: #333; /* สีพื้นหลัง Navbar */
+  color: #fff; /* สีข้อความใน Navbar */
+  padding: 10px; /* ระยะห่างของข้อความจากขอบ Navbar */
+  display: flex; /* ให้เนื้อหาใน Navbar เรียงต่อกันในแนวนอน */
+  justify-content: space-between; /* จัดเรียงเนื้อหาใน Navbar ให้อยู่ด้านขวาและด้านซ้าย */
+  align-items: center; /* จัดเรียงเนื้อหาใน Navbar ให้อยู่ตรงกลางแนวตั้ง */
+}
 
-  
+.select-fav {
+  display: flex; /* ให้เนื้อหาใน .select-fav เรียงต่อกันในแนวนอน */
+  align-items: center; /* จัดเรียงเนื้อหาใน .select-fav ให้อยู่ตรงกลางแนวตั้ง */
+}
+
+.select-fav select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.select-fav select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.select-fav select option {
+  background-color: #fff;
+  color: #333;
+}
+
+.select-fav select option:hover {
+  background-color: #f0f0f0;
+}
+
+.food-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.food-item {
+  width: calc(25% - 20px);
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.food-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.food-title {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.food-details button{
+  background-color: rgb(250, 197, 83);
+  width: 100%;
+  padding: 10px;
+}
+.container-fav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+ 
+}
+.container-fav button{
+  background-color: white; 
+  border: none; 
+  background: none; 
+  cursor: pointer;
+  width: 15%;
+}
+.add-fav-button {
+  width: 50%;
+  background-color: #000000;
+  border: none;
+  padding: 15px;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.add-fav-button:hover {
+  background-color: #1a1919;
+}
+
+.favorite-button {
+display: flex;
+align-items: center;
+background-color: #fff;
+border: 1px solid #ccc;
+border-radius: 4px;
+padding: 10px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.favorite-button img {
+  height: 10px; 
+}
+
+.favorite-button:hover {
+background-color: #f0f0f0;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+.food-item {
+  width: calc(25% - 20px);
+}
+}
+
+@media only screen and (max-width: 650px) {
+.food-item {
+  width: calc(40% - 20px);
+  width: 300px;
+}
+}
+
+
+@media only screen and (max-width: 400px) {
+.food-item {
+  width: calc(70% - 20px);
+}
+} 
