@@ -32,7 +32,6 @@ export class FoodPageComponent implements OnInit {
     }, error => {
       console.error(error);
     });
-    this.updateDisplayedFoods();
   }
   foodData : any[] = [];
   getFoodData(): void {
