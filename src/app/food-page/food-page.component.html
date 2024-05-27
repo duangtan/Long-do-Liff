@@ -10,7 +10,7 @@
 
   <div class="food-list" *ngIf="selectedOption==='all'">
     <div class="food-item" *ngFor="let food of food_list">
-      <img class="food-img" [src]="food.image" [alt]="food.id + ' Image'">
+      <!-- <img class="food-img" [src]="food.image" [alt]="food.id + ' Image'">
       <div class="food-details">
         <h3 class="food-title">{{ food.title }}</h3>
           <div class="container-fav">
@@ -25,13 +25,14 @@
             </button>
           </div>
           <button type="button" (click)="getDetail(food.id)">See more</button>
-      </div>
+      </div> -->
+      <app-card></app-card>
     </div>
   </div>
 
   <div class="food-list" *ngIf="selectedOption==='favorite'" >
     <div class="food-item" *ngFor="let food of displayedFoods">
-      <img class="food-img" [src]="food.image" [alt]="food.id + ' Image'">
+      <!-- <img class="food-img" [src]="food.image" [alt]="food.id + ' Image'">
       <div class="food-details">
         <h3 class="food-title">{{ food.title }}</h3>
           <div class="container-fav">
@@ -46,7 +47,8 @@
             </button>
           </div>
           <button type="button" (click)="getDetail(food.id)">See more</button>
-      </div>
+      </div> -->
+      <!-- <app-card></app-card> -->
     </div>
   </div>
 </div>

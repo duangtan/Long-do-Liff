@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ServiceService } from '../service.service';
 import { Router } from '@angular/router';
-
-
 export interface foodlist{
   title : string;
   difficulty : string;
@@ -10,13 +8,12 @@ export interface foodlist{
   id : string;
   isFavorite: boolean; 
 }
-
 @Component({
-  selector: 'app-food-page',
-  templateUrl: './food-page.component.html',
-  styleUrls: ['./food-page.component.css']
+  selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.css']
 })
-export class FoodPageComponent implements OnInit {
+export class CardComponent {
   selectedDifficulty: string = 'All';
   food_list: foodlist[] = []; 
   displayedFoods: foodlist[] = [];

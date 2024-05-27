@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { FoodPageComponent } from './food-page/food-page.component';
 import { DetailFoodComponent } from './detail-food/detail-food.component';
 import { FormsModule } from '@angular/forms';
+import { CardComponent } from './card/card.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FoodPageComponent,
-    DetailFoodComponent
+    DetailFoodComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
