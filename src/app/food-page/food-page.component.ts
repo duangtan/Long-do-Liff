@@ -69,18 +69,18 @@ export class FoodPageComponent implements OnInit {
   isFavorite = false;
 
   toggleFavorite(foodId: string) {
-  //   const food = this.food_list.find(food => food.id === foodId);
-  //   if (food) {
-  //   food.isFavorite = !food.isFavorite;
-  //   if (food.isFavorite) {
-  //     this.favoriteFoods.push(foodId);
-  //   } else {
-  //     const index = this.favoriteFoods.indexOf(foodId);
-  //     if (index !== -1) {
-  //       this.favoriteFoods.splice(index, 1);
-  //     }
-  //   }
-  // }
+    const food = this.food_list.find(food => food.id === foodId);
+    if (food) {
+    food.isFavorite = !food.isFavorite;
+    if (food.isFavorite) {
+      this.favoriteFoods.push(foodId);
+    } else {
+      const index = this.favoriteFoods.indexOf(foodId);
+      if (index !== -1) {
+        this.favoriteFoods.splice(index, 1);
+      }
+    }
+  }
   const index = this.favoriteFoods.indexOf(foodId);
     if (index !== -1) {
       this.favoriteFoods.splice(index, 1);
