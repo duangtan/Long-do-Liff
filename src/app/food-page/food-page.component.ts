@@ -19,9 +19,10 @@ export interface foodlist{
 export class FoodPageComponent implements OnInit {
   selectedDifficulty: string = 'All';
   food_list: foodlist[] = []; 
+  displayedFoods: foodlist[] = [];
 
   constructor(private apiService: ServiceService,private router: Router) {
-    this.displayedFoods = [...this.food_list];
+   
   }
 
   ngOnInit(): void {
@@ -31,6 +32,7 @@ export class FoodPageComponent implements OnInit {
     }, error => {
       console.error(error);
     });
+    this.updateDisplayedFoods();
   }
   foodData : any[] = [];
   getFoodData(): void {
@@ -100,7 +102,7 @@ onOptionChange() {
     
   // เรียกใช้งานฟังก์ชันหรือทำสิ่งที่ต้องการเมื่อมีการเลือกตัวเลือกใหม่
 }
-displayedFoods: foodlist[] = [];
+
 
 
 updateDisplayedFoods() {
