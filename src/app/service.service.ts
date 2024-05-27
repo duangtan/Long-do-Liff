@@ -10,7 +10,7 @@ export class ServiceService {
   private apiUrl = 'https://the-vegan-recipes-db.p.rapidapi.com/';
   private headers = new HttpHeaders({
     'X-RapidAPI-Key': '519c0d9ec7mshea938716fd562b4p14f429jsnc912a94da527',
-    'X-RapidAPI-Host': 'the-vegan-recipes-db.p.rapidapi.com'
+		'X-RapidAPI-Host': 'the-vegan-recipes-db.p.rapidapi.com'
   });
 
   constructor(private http: HttpClient) {}
