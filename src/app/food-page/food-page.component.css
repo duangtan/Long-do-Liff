@@ -44,7 +44,7 @@
 }
 
 
-.food-item {
+/* .food-item {
   width: calc(25% - 20px);
   margin: 10px;
   background-color: #fff;
@@ -119,11 +119,11 @@ transition: background-color 0.3s;
 
 .favorite-button:hover {
 background-color: #f0f0f0;
-}
+} */
 
 
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
 .food-item {
   width: calc(25% - 20px);
 }
@@ -141,4 +141,4 @@ background-color: #f0f0f0;
 .food-item {
   width: calc(70% - 20px);
 }
-} 
+}  */
