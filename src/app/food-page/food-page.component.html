@@ -1,5 +1,6 @@
 <div class="container">
   <h2>The Vegan Food</h2>
+  <button type="button" (click)="showFavoriteFoods()">Favorite Food</button>
   <div class="food-list">
     <div class="food-item" *ngFor="let food of food_list">
       <img class="food-img" [src]="food.image" [alt]="food.id + ' Image'">
@@ -17,7 +18,6 @@
             </button>
           </div>
           <button type="button" (click)="getDetail(food.id)">See more</button>
-          <button type="button" (click)="showFavoriteFoods()">See more</button>
       </div>
     </div>
   </div>
