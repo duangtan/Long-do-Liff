@@ -41,11 +41,14 @@
 }
 .container-fav {
   display: flex;
-  align-items: center; /* Align items vertically in the center */
-  justify-content: space-between; /* Add space between items */
+  align-items: center;
+  justify-content: space-between; 
+}
+.container-fav button{
+  background-color: white; 
 }
 .add-fav-button {
-  width: 100%;
+  width: 50%;
   background-color: #000000;
   border: none;
   padding: 15px;
