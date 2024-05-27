@@ -1,7 +1,7 @@
 <div class="container">
   <div class="navbar">
     <div class="select-fav">
-        <span>show : </span>
+        <span>show Food : </span>
         <select [(ngModel)]="selectedOption" (change)="onOptionChange()">
             <option value="all">All</option>
             <option value="favorite">Favorite</option>
@@ -30,7 +30,6 @@
           </div>
           <button type="button" (click)="getDetail(food.id)">See more</button>
       </div>
-      <!-- <app-card></app-card> -->
     </div>
   </div>
 

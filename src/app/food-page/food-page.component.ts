@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../service.service';
 import { Router } from '@angular/router';
+import { LocalStorageService } from '../local-storage.service';
 
 
 export interface foodlist{
@@ -21,13 +22,15 @@ export class FoodPageComponent implements OnInit {
   food_list: foodlist[] = []; 
   displayedFoods: foodlist[] = [];
 
-  constructor(private apiService: ServiceService,private router: Router) {
+  constructor(private apiService: ServiceService,private router: Router,private localStorageService: LocalStorageService) {
    
   }
 
   ngOnInit(): void {
     this.apiService.getVegFood().subscribe((data: any) => {
       this.food_list = data; 
+      this.displayedFoods = [...this.food_list]; // แสดงรายการอาหารทั้งหมดตั้งแต่เริ่มต้น
+      this.favoriteFoods = this.localStorageService.getItem('favoriteFoods') || [];
       console.log(this.food_list);
     }, error => {
       console.error(error);
@@ -66,18 +69,25 @@ export class FoodPageComponent implements OnInit {
   isFavorite = false;
 
   toggleFavorite(foodId: string) {
-    const food = this.food_list.find(food => food.id === foodId);
-    if (food) {
-    food.isFavorite = !food.isFavorite;
-    if (food.isFavorite) {
-      this.favoriteFoods.push(foodId);
+  //   const food = this.food_list.find(food => food.id === foodId);
+  //   if (food) {
+  //   food.isFavorite = !food.isFavorite;
+  //   if (food.isFavorite) {
+  //     this.favoriteFoods.push(foodId);
+  //   } else {
+  //     const index = this.favoriteFoods.indexOf(foodId);
+  //     if (index !== -1) {
+  //       this.favoriteFoods.splice(index, 1);
+  //     }
+  //   }
+  // }
+  const index = this.favoriteFoods.indexOf(foodId);
+    if (index !== -1) {
+      this.favoriteFoods.splice(index, 1);
     } else {
-      const index = this.favoriteFoods.indexOf(foodId);
-      if (index !== -1) {
-        this.favoriteFoods.splice(index, 1);
-      }
+      this.favoriteFoods.push(foodId);
     }
-  }
+    this.localStorageService.setItem('favoriteFoods', this.favoriteFoods);
 }
 showFavoriteFoods() {
   const favoriteFoodItems: foodlist[] = [];
