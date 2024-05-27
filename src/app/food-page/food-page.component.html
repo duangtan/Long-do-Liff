@@ -12,11 +12,11 @@
   <!-- <button (click)="logout()">ออกจากระบบ</button> -->
   
 
-  <div class="food-list" *ngIf="selectedOption==='all'">
+  <div *ngIf="selectedOption==='all'">
     <app-card></app-card>
   </div>
 
-  <div class="food-list" *ngIf="selectedOption==='favorite'" >
+  <div *ngIf="selectedOption==='favorite'" >
     <app-card></app-card>
   </div>
 
