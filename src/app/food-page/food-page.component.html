@@ -1,30 +1,13 @@
 <div class="container">
   <h2>The Vegan Food</h2>
   <div class="food-list">
-    <!-- <div class="dropdown">
-      <label for="select-difficulty">Difficulty</label><br>
-      <select id="select-difficulty" [(ngModel)]="selectedDifficulty" >
-        <option value="All">All</option>
-        <option value="Easy">Easy</option>
-        <option value="Medium">Medium</option>
-      </select>
-    </div> -->
     <div class="food-item" *ngFor="let food of food_list">
       <img class="food-img" [src]="food.image" [alt]="food.id + ' Image'">
       <div class="food-details">
         <h3 class="food-title">{{ food.title }}</h3>
-          <!-- <p class="food-difficulty">Difficulty: {{ food.difficulty }}</p>
-          <button (click)="toggleFavorite()" class="favorite-button">
-            <span *ngIf="!isFavorite">
-              <img src="assets/images/heart-outline-icon.png " alt="Heart Outline Icon"> Add to Favorites
-            </span>
-            <span *ngIf="isFavorite">
-              <img src="assets/images/heart-filled-icon.png" alt="Heart Filled Icon"> Added to Favorites
-            </span>
-          </button> -->
           <div class="container-fav">
             <p class="food-difficulty">Difficulty: {{ food.difficulty }}</p>
-            <button (click)="toggleFavorite()" class="favorite-button">
+            <button (click)="toggleFavorite(food.id)" class="favorite-button">
               <span *ngIf="!isFavorite">
                 <img src="assets/images/heart-outline-icon.png" alt="Heart Outline Icon"> 
               </span>
