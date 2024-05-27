@@ -8,10 +8,10 @@
           <div class="container-fav">
             <p class="food-difficulty">Difficulty: {{ food.difficulty }}</p>
             <button (click)="toggleFavorite(food.id)" class="favorite-button">
-              <span *ngIf="!isFavorite">
+              <span *ngIf="!food.isFavorite">
                 <img src="assets/images/heart-outline-icon.png" alt="Heart Outline Icon"> 
               </span>
-              <span *ngIf="isFavorite">
+              <span *ngIf="food.isFavorite">
                 <img src="assets/images/heart-filled-icon.png" alt="Heart Filled Icon"> 
               </span>
             </button>
