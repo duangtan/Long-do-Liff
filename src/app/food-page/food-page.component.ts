@@ -85,6 +85,7 @@ showFavoriteFoods() {
     }
   }
   console.log(favoriteFoodItems);
+  return favoriteFoodItems;
 }
 
 selectedOption: string = 'all';
@@ -94,6 +95,15 @@ onOptionChange() {
     if (this.selectedOption === 'favorite') {
       this.showFavoriteFoods();
     }
+    this.updateDisplayedFoods();
   // เรียกใช้งานฟังก์ชันหรือทำสิ่งที่ต้องการเมื่อมีการเลือกตัวเลือกใหม่
+}
+displayedFoods: foodlist[] = [];
+updateDisplayedFoods() {
+  if (this.selectedOption === 'favorite') {
+    this.displayedFoods = this.showFavoriteFoods();
+  } else {
+    this.displayedFoods = [...this.food_list]; // แสดงรายการอาหารทั้งหมด
+  }
 }
 }

@@ -6,10 +6,11 @@
       <option value="all">All</option>
       <option value="favorite">Favorite</option>
     </select>
-</div>
+  </div>
   <button type="button" (click)="showFavoriteFoods()">Favorite Food</button>
-  <div class="food-list">
-    <div class="food-item" *ngFor="let food of food_list">
+
+  <div class="food-list" >
+    <div class="food-item" *ngFor="let food of displayedFoods">
       <img class="food-img" [src]="food.image" [alt]="food.id + ' Image'">
       <div class="food-details">
         <h3 class="food-title">{{ food.title }}</h3>
