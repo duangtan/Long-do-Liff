@@ -65,4 +65,9 @@ export class FoodPageComponent implements OnInit {
   getDetail(foodId: string) {
     this.router.navigate(['/api', foodId]); 
   }
+  isFavorite = false;
+
+  toggleFavorite() {
+    this.isFavorite = !this.isFavorite;
+  }
 }
