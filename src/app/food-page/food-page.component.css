@@ -1,13 +1,42 @@
-.header-bar {
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #1f1f1f;
-  /* position: sticky; */
-  top: 0;
-  z-index: 1000;
-  color: white;
+.navbar {
+  background-color: #333; /* สีพื้นหลัง Navbar */
+  color: #fff; /* สีข้อความใน Navbar */
+  padding: 10px; /* ระยะห่างของข้อความจากขอบ Navbar */
+  display: flex; /* ให้เนื้อหาใน Navbar เรียงต่อกันในแนวนอน */
+  justify-content: space-between; /* จัดเรียงเนื้อหาใน Navbar ให้อยู่ด้านขวาและด้านซ้าย */
+  align-items: center; /* จัดเรียงเนื้อหาใน Navbar ให้อยู่ตรงกลางแนวตั้ง */
 }
+
+.select-fav {
+  display: flex; /* ให้เนื้อหาใน .select-fav เรียงต่อกันในแนวนอน */
+  align-items: center; /* จัดเรียงเนื้อหาใน .select-fav ให้อยู่ตรงกลางแนวตั้ง */
+}
+
+.select-fav select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.select-fav select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.select-fav select option {
+  background-color: #fff;
+  color: #333;
+}
+
+.select-fav select option:hover {
+  background-color: #f0f0f0;
+}
+
 .food-list {
   display: flex;
   flex-wrap: wrap;
