@@ -1,19 +1,18 @@
-<!-- food-item.component.html -->
-<!-- <div class="food-item">
+<div class="food-item" *ngFor="let food of displayedFoods">
   <img class="food-img" [src]="food.image" [alt]="food.id + ' Image'">
   <div class="food-details">
     <h3 class="food-title">{{ food.title }}</h3>
-    <div class="container-fav">
-      <p class="food-difficulty">Difficulty: {{ food.difficulty }}</p>
-      <button (click)="toggleFavorite()" class="favorite-button">
-        <span *ngIf="!food.isFavorite">
-          <img src="assets/images/heart-outline-icon.png" alt="Heart Outline Icon"> 
-        </span>
-        <span *ngIf="food.isFavorite">
-          <img src="assets/images/heart-filled-icon.png" alt="Heart Filled Icon"> 
-        </span>
-      </button>
-    </div>
-    <button type="button" (click)="getDetail()">See more</button>
+      <div class="container-fav">
+        <p class="food-difficulty">Difficulty: {{ food.difficulty }}</p>
+        <button (click)="toggleFavorite(food.id)" class="favorite-button">
+          <span *ngIf="!food.isFavorite">
+            <img src="assets/images/heart-outline-icon.png" alt="Heart Outline Icon"> 
+          </span>
+          <span *ngIf="food.isFavorite">
+            <img src="assets/images/heart-filled-icon.png" alt="Heart Filled Icon"> 
+          </span>
+        </button>
+      </div>
+      <button type="button" (click)="getDetail(food.id)">See more</button>
   </div>
-</div> -->
+</div>

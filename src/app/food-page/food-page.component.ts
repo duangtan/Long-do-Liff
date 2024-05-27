@@ -29,7 +29,7 @@ export class FoodPageComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.getVegFood().subscribe((data: any) => {
       this.food_list = data; 
-      this.displayedFoods = [...this.food_list]; // แสดงรายการอาหารทั้งหมดตั้งแต่เริ่มต้น
+      this.displayedFoods = [...this.food_list]; 
       this.favoriteFoods = this.localStorageService.getItem('favoriteFoods') || [];
       console.log(this.food_list);
     }, error => {
@@ -79,16 +79,15 @@ export class FoodPageComponent implements OnInit {
       if (index !== -1) {
         this.favoriteFoods.splice(index, 1);
       }
-      this.localStorageService.setItem('favoriteFoods', this.favoriteFoods);
     }
   }
-  // const index = this.favoriteFoods.indexOf(foodId);
-  //   if (index !== -1) {
-  //     this.favoriteFoods.splice(index, 1);
-  //   } else {
-  //     this.favoriteFoods.push(foodId);
-  //   }
-  //   this.localStorageService.setItem('favoriteFoods', this.favoriteFoods);
+  const index = this.favoriteFoods.indexOf(foodId);
+    if (index !== -1) {
+      this.favoriteFoods.splice(index, 1);
+    } else {
+      this.favoriteFoods.push(foodId);
+    }
+    this.localStorageService.setItem('favoriteFoods', this.favoriteFoods);
 }
 showFavoriteFoods() {
   const favoriteFoodItems: foodlist[] = [];
@@ -111,13 +110,11 @@ onOptionChange() {
     this.updateDisplayedFoods();
 }
 
-
-
 updateDisplayedFoods() {
   if (this.selectedOption === 'favorite') {
     this.displayedFoods = this.showFavoriteFoods();
   } else {
-    this.displayedFoods = [...this.food_list]; // แสดงรายการอาหารทั้งหมด
+    this.displayedFoods = [...this.food_list]; 
   }
 }
 }

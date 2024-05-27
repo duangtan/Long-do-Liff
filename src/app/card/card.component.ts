@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../service.service';
 import { Router } from '@angular/router';
+import { LocalStorageService } from '../local-storage.service';
+
 export interface foodlist{
   title : string;
   difficulty : string;
@@ -8,23 +10,26 @@ export interface foodlist{
   id : string;
   isFavorite: boolean; 
 }
+
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent {
+export class CardComponent implements OnInit {
   selectedDifficulty: string = 'All';
   food_list: foodlist[] = []; 
   displayedFoods: foodlist[] = [];
 
-  constructor(private apiService: ServiceService,private router: Router) {
+  constructor(private apiService: ServiceService,private router: Router,private localStorageService: LocalStorageService) {
    
   }
 
   ngOnInit(): void {
     this.apiService.getVegFood().subscribe((data: any) => {
       this.food_list = data; 
+      this.displayedFoods = [...this.food_list]; // แสดงรายการอาหารทั้งหมดตั้งแต่เริ่มต้น
+      this.favoriteFoods = this.localStorageService.getItem('favoriteFoods') || [];
       console.log(this.food_list);
     }, error => {
       console.error(error);
@@ -73,8 +78,16 @@ export class CardComponent {
       if (index !== -1) {
         this.favoriteFoods.splice(index, 1);
       }
+      this.localStorageService.setItem('favoriteFoods', this.favoriteFoods);
     }
   }
+  // const index = this.favoriteFoods.indexOf(foodId);
+  //   if (index !== -1) {
+  //     this.favoriteFoods.splice(index, 1);
+  //   } else {
+  //     this.favoriteFoods.push(foodId);
+  //   }
+  //   this.localStorageService.setItem('favoriteFoods', this.favoriteFoods);
 }
 showFavoriteFoods() {
   const favoriteFoodItems: foodlist[] = [];
