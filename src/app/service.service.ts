@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
 export class ServiceService {
   private apiUrl = 'https://the-vegan-recipes-db.p.rapidapi.com/';
   private headers = new HttpHeaders({
-    'x-rapidapi-key': '9bee21b09emshce4834927f8b630p1738cdjsn901b86c018ed',
-		'x-rapidapi-host': 'the-vegan-recipes-db.p.rapidapi.com'
+    'X-RapidAPI-Key': '519c0d9ec7mshea938716fd562b4p14f429jsnc912a94da527',
+    'X-RapidAPI-Host': 'the-vegan-recipes-db.p.rapidapi.com'
   });
 
   constructor(private http: HttpClient) {}
