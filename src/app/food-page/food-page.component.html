@@ -7,8 +7,6 @@
       <option value="favorite">Favorite</option>
     </select>
   </div>
-  <button type="button" (click)="showFavoriteFoods()">Favorite Food</button>
-
   <div class="food-list" >
     <div class="food-item" *ngFor="let food of displayedFoods">
       <img class="food-img" [src]="food.image" [alt]="food.id + ' Image'">

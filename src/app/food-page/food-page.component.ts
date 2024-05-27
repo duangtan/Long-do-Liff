@@ -93,10 +93,10 @@ showFavoriteFoods() {
 selectedOption: string = 'all';
 onOptionChange() {
   console.log('Selected option:', this.selectedOption);
-  this.updateDisplayedFoods();
     if (this.selectedOption === 'favorite') {
       this.showFavoriteFoods();
     }
+    this.updateDisplayedFoods();
     
   // เรียกใช้งานฟังก์ชันหรือทำสิ่งที่ต้องการเมื่อมีการเลือกตัวเลือกใหม่
 }
