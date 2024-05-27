@@ -13,7 +13,7 @@
   
 
   <div class="food-list" *ngIf="selectedOption==='all'">
-    <div class="food-item" *ngFor="let food of food_list">
+    <div class="food-item" *ngFor="let food of displayedFoods">
       <img class="food-img" [src]="food.image" [alt]="food.id + ' Image'">
       <div class="food-details">
         <h3 class="food-title">{{ food.title }}</h3>
