@@ -43,12 +43,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between; 
-  border: none; 
-  background: none; 
-  cursor: pointer;
+ 
 }
 .container-fav button{
   background-color: white; 
+  border: none; 
+  background: none; 
+  cursor: pointer;
 }
 .add-fav-button {
   width: 50%;
