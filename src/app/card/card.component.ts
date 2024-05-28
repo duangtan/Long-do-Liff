@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ServiceService } from '../service.service';
 import { Router } from '@angular/router';
 import { LocalStorageService } from '../local-storage.service';
@@ -17,7 +17,8 @@ export interface foodlist{
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  @Output() updateFoods = new EventEmitter<void>();
+  @Input() selectedOption: string | undefined;
+  //@Output() displayedFoodsChange = new EventEmitter<any[]>();
 
   food_list: foodlist[] = []; 
   displayedFoods: foodlist[] = [];
@@ -27,10 +28,9 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.getVegFood().subscribe((data: any) => {
       this.food_list = data; 
-      //this.displayedFoods = [...this.food_list]; // แสดงรายการอาหารทั้งหมดตั้งแต่เริ่มต้น
-      this.favoriteFoods = this.localStorageService.getItem('favoriteFoods') || [];
-      this.updateFoods.emit();
-      console.log(this.food_list);
+      this.onOptionChange();
+      console.log(this.selectedOption);
+      console.log("Display",this.displayedFoods);
     }, error => {
       console.error(error);
     });
@@ -63,53 +63,16 @@ export class CardComponent implements OnInit {
   getDetail(foodId: string) {
     this.router.navigate(['/api', foodId]); 
   }
-
-  favoriteFoods: string[] = [];
-  isFavorite = false;
-
-  toggleFavorite(foodId: string) {
-    const food = this.food_list.find(food => food.id === foodId);
-    if (food) {
-    food.isFavorite = !food.isFavorite;
-    if (food.isFavorite) {
-      this.favoriteFoods.push(foodId);
-    } else {
-      const index = this.favoriteFoods.indexOf(foodId);
-      if (index !== -1) {
-        this.favoriteFoods.splice(index, 1);
-      }
-      this.localStorageService.setItem('favoriteFoods', this.favoriteFoods);
+  onOptionChange() {
+    console.log("entry",this.displayedFoods);
+    if (this.selectedOption === 'all') {
+      this.displayedFoods = [...this.food_list]; ;
+    } else if (this.selectedOption === 'easy') { 
+      this.displayedFoods = this.food_list.filter(food => food.difficulty === 'Easy');
+    } else if (this.selectedOption === 'medium') {
+      this.displayedFoods = this.food_list.filter(food => food.difficulty === 'Medium');
+      console.log("This",this.displayedFoods);
     }
+    //this.displayedFoodsChange.emit(this.displayedFoods);
   }
-}
-showFavoriteFoods() {
-  const favoriteFoodItems: foodlist[] = [];
-  for (const foodId of this.favoriteFoods) {
-    const food = this.food_list.find(item => item.id === foodId);
-    if (food) {
-      favoriteFoodItems.push(food);
-    }
-  }
-  console.log(favoriteFoodItems);
-  return favoriteFoodItems;
-}
-
-selectedOption: string = 'all';
-onOptionChange() {
-  console.log('Selected option:', this.selectedOption);
-    if (this.selectedOption === 'favorite') {
-      this.showFavoriteFoods();
-    }
-    this.updateDisplayedFoods();
-}
-
-
-
-updateDisplayedFoods() {
-  if (this.selectedOption === 'favorite') {
-    this.displayedFoods = this.showFavoriteFoods();
-  } else {
-    this.displayedFoods = [...this.food_list]; 
-  }
-}
 }

@@ -1,23 +1,27 @@
 <div class="container">
-  <div class="navbar">
-    <div class="select-fav">
-        <span>show Food : </span>
-        <select [(ngModel)]="selectedOption" (change)="onOptionChange()">
-            <option value="all">All</option>
-            <option value="favorite">Favorite</option>
-        </select>
-    </div>
+  <div class="select-fav">
+    <span>show Food : </span>
+    <select [(ngModel)]="selectedOption" (change)="onOptionChange()">
+        <option value="all">All</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+    </select>
   </div>
-  <h2>The Vegan Food</h2>
-  <!-- <button (click)="logout()">ออกจากระบบ</button> -->
+    
+  <div class="title-container">
+    <h2 class="title">The Vegan Food</h2>
+  </div>
   
-
   <div *ngIf="selectedOption==='all'">
-    <app-card  (updateFoods)="updateDisplayedFoods()"></app-card>
+    <app-card [selectedOption]="selectedOption"></app-card>
   </div>
 
-  <div *ngIf="selectedOption==='favorite'" >
-    <app-card (updateFoods)="updateDisplayedFoods()"></app-card>
+  <div *ngIf="selectedOption==='easy'" >
+    <app-card [selectedOption]="selectedOption"></app-card>
+  </div>
+
+  <div *ngIf="selectedOption==='medium'" >
+    <app-card [selectedOption]="selectedOption"></app-card>
   </div>
 
 
