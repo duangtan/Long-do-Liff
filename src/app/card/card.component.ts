@@ -18,7 +18,6 @@ export interface foodlist{
 })
 export class CardComponent implements OnInit {
   @Input() selectedOption: string | undefined;
-  //@Output() displayedFoodsChange = new EventEmitter<any[]>();
 
   food_list: foodlist[] = []; 
   displayedFoods: foodlist[] = [];
@@ -73,6 +72,6 @@ export class CardComponent implements OnInit {
       this.displayedFoods = this.food_list.filter(food => food.difficulty === 'Medium');
       console.log("This",this.displayedFoods);
     }
-    //this.displayedFoodsChange.emit(this.displayedFoods);
+    
   }
 }
