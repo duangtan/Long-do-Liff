@@ -1,7 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ServiceService } from '../service.service';
 import { Router } from '@angular/router';
-import { LocalStorageService } from '../local-storage.service';
 
 export interface foodlist{
   title : string;
@@ -22,7 +21,7 @@ export class CardComponent implements OnInit {
   food_list: foodlist[] = []; 
   displayedFoods: foodlist[] = [];
 
-  constructor(private apiService: ServiceService,private router: Router,private localStorageService: LocalStorageService) {}
+  constructor(private apiService: ServiceService,private router: Router) {}
 
   ngOnInit(): void {
     this.apiService.getVegFood().subscribe((data: any) => {
@@ -53,8 +52,6 @@ export class CardComponent implements OnInit {
         'image' : (data[i]['image']||""),
         'id' : (data[i]['id']||""),
       })
-      console.log("This",data.length);
-      
     }
     return _data;
   }
@@ -70,7 +67,6 @@ export class CardComponent implements OnInit {
       this.displayedFoods = this.food_list.filter(food => food.difficulty === 'Easy');
     } else if (this.selectedOption === 'medium') {
       this.displayedFoods = this.food_list.filter(food => food.difficulty === 'Medium');
-      console.log("This",this.displayedFoods);
     }
     
   }

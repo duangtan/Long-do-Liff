@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ServiceService } from '../service.service';
 import { Router } from '@angular/router';
-import { LocalStorageService } from '../local-storage.service';
 
 
 export interface foodlist{
@@ -17,10 +16,8 @@ export interface foodlist{
   styleUrls: ['./food-page.component.css']
 })
 export class FoodPageComponent implements OnInit {
-  //food_list: foodlist[] = []; 
-  
 
-  constructor(private apiService: ServiceService,private router: Router,private localStorageService: LocalStorageService) {}
+  constructor(private apiService: ServiceService,private router: Router) {}
   @Input() displayedFoods: any[] = [];
 
   ngOnInit(): void {
@@ -32,8 +29,6 @@ export class FoodPageComponent implements OnInit {
     console.log('Selected option:', this.selectedOption);
   }
   onDisplayedFoodsChange(displayedFoods: any[]) {
-    // รับค่า displayedFoods จาก app-card และทำตามขั้นตอนต่อไป
-    //this.food_list = displayedFoods;
   }
 
 

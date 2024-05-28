@@ -31,7 +31,6 @@ export class AppComponent implements OnInit {
     liff.getProfile()
       .then(profile => {
         console.log(profile);
-        // เพิ่มโค้ดเพื่อแสดงโปรไฟล์หรือใช้ข้อมูลโปรไฟล์ที่ได้ตามต้องการ
       })
       .catch((err: any) => {
         console.error('Error getting profile', err);
