@@ -13,7 +13,7 @@
   
 
   <div *ngIf="selectedOption==='all'">
-    <app-card></app-card>
+    <app-card  (updateFoods)="updateDisplayedFoods()"></app-card>
   </div>
 
   <div *ngIf="selectedOption==='favorite'" >

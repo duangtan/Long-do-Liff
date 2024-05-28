@@ -30,45 +30,45 @@ export class FoodPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.apiService.getVegFood().subscribe((data: any) => {
-      this.food_list = data; 
-      this.displayedFoods = [...this.food_list]; 
-      this.favoriteFoods = this.localStorageService.getItem('favoriteFoods') || [];
-      this.updateFavoriteStatus();
-      this.updateDisplayedFoods();
-      console.log(this.food_list);
-    }, error => {
-      console.error(error);
-    });
+    // this.apiService.getVegFood().subscribe((data: any) => {
+    //   this.food_list = data; 
+    //   this.displayedFoods = [...this.food_list]; 
+    //   this.favoriteFoods = this.localStorageService.getItem('favoriteFoods') || [];
+    //   this.updateFavoriteStatus();
+    //   this.updateDisplayedFoods();
+    //   console.log(this.food_list);
+    // }, error => {
+    //   console.error(error);
+    // });
   }
   
-  getFoodData(): void {
-    this.apiService.getVegFood().subscribe(
-      (data) => {
-        this.foodData.push(data);
-        this.convertData(this.foodData);
-        this.food_list = this.convertData(this.foodData);    
-      },
-    );
-  }
-  convertData(data:any):any[]{
-    let _data =[];
-    for(let i=0;i<data.length;i++){
-      _data.push({
-        'title': (data[i]['title']||""),
-        'difficulty': (data[i]['difficulty']||""),
-        'image' : (data[i]['image']||""),
-        'id' : (data[i]['id']||""),
-      })
-      console.log("This",data.length);
+  // getFoodData(): void {
+  //   this.apiService.getVegFood().subscribe(
+  //     (data) => {
+  //       this.foodData.push(data);
+  //       this.convertData(this.foodData);
+  //       this.food_list = this.convertData(this.foodData);    
+  //     },
+  //   );
+  // }
+  // convertData(data:any):any[]{
+  //   let _data =[];
+  //   for(let i=0;i<data.length;i++){
+  //     _data.push({
+  //       'title': (data[i]['title']||""),
+  //       'difficulty': (data[i]['difficulty']||""),
+  //       'image' : (data[i]['image']||""),
+  //       'id' : (data[i]['id']||""),
+  //     })
+  //     console.log("This",data.length);
       
-    }
-    return _data;
-  }
+  //   }
+  //   return _data;
+  // }
 
-  getDetail(foodId: string) {
-    this.router.navigate(['/api', foodId]); 
-  }
+  // getDetail(foodId: string) {
+  //   this.router.navigate(['/api', foodId]); 
+  // }
 
   updateFavoriteStatus(): void {
     this.food_list.forEach(food => {
