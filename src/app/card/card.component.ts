@@ -27,7 +27,7 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.getVegFood().subscribe((data: any) => {
       this.food_list = data; 
-      this.displayedFoods = [...this.food_list]; // แสดงรายการอาหารทั้งหมดตั้งแต่เริ่มต้น
+      //this.displayedFoods = [...this.food_list]; // แสดงรายการอาหารทั้งหมดตั้งแต่เริ่มต้น
       this.favoriteFoods = this.localStorageService.getItem('favoriteFoods') || [];
       this.updateFoods.emit();
       console.log(this.food_list);
