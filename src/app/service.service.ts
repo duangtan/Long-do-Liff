@@ -34,7 +34,7 @@ export class ServiceService {
   }
 
   getCocktailById(cocktailId: string): Observable<CocktailDetail> { 
-    return this.http.get<FoodDetail>(`${this.apiCocktail}${cocktailId}`);
+    return this.http.get<CocktailDetail>(`${this.apiCocktail}${cocktailId}`);
   }
   
 
