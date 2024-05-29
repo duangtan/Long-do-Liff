@@ -1,0 +1,25 @@
+<div class="food-list" *ngIf="isVeganPage">
+    <div class="food-item" *ngFor="let food of displayedFoods">
+      <img class="food-img" [src]="food.image" [alt]="food.id + ' Image'">
+      <div class="food-details">
+        <h3 class="food-title">{{ food.title }}</h3>
+        <div class="container-fav">
+          <p class="food-difficulty">Difficulty: {{ food.difficulty }}</p>
+        </div>
+        <button type="button" (click)="getDetail(food.id)">See more</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="food-list" *ngIf="isCocktailPage">
+    <div class="food-item" *ngFor="let cocktail of displayedCocktails">
+      <img class="food-img" [src]="cocktail.image" [alt]="cocktail.id + ' Image'">
+      <div class="food-details">
+        <h3 class="food-title">{{ cocktail.title }}</h3>
+        <div class="container-fav">
+          <p class="food-difficulty">Difficulty: {{ cocktail.difficulty }}</p>
+        </div>
+        <button type="button" (click)="getDetail(cocktail.id)">See more</button>
+      </div>
+    </div>
+  </div>

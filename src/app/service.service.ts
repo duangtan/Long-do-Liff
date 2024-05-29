@@ -7,21 +7,34 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ServiceService {
-  private apiUrl = 'https://the-vegan-recipes-db.p.rapidapi.com/';
+  private apiFood = 'https://the-vegan-recipes-db.p.rapidapi.com/';
   private headers = new HttpHeaders({
     'x-rapidapi-key': '64b6ec1b95msh824e810cc0b079dp19a41bjsn746c3081d0f2',
-		'x-rapidapi-host': 'the-vegan-recipes-db.p.rapidapi.com'
-
+	  'x-rapidapi-host': 'the-vegan-recipes-db.p.rapidapi.com'
+  });
+  private apiCocktail = 'https://the-cocktail-db3.p.rapidapi.com/';
+  private headers2 = new HttpHeaders({
+    'X-RapidAPI-Key': '29c5b6aea2msh1c59e5a232dfdcdp1dfbd4jsn091d2c13df9f',
+    'X-RapidAPI-Host': 'the-cocktail-db3.p.rapidapi.com'
+  
   });
 
   constructor(private http: HttpClient) {}
   getVegFood() {
-    return this.http.get(this.apiUrl, { headers : this.headers });
+    return this.http.get(this.apiFood,  { headers : this.headers } );
   }
 
   getFoodById(foodId: string): Observable<FoodDetail> {
-    return this.http.get<FoodDetail>(`${this.apiUrl}${foodId}`, { headers: this.headers });
+    return this.http.get<FoodDetail>(`${this.apiFood}${foodId}`);
   }
+
+  getCocktail() {
+    return this.http.get(this.apiCocktail,  { headers : this.headers2 });
+  }
+
+  // getCocktailById(cocktailId: string): Observable<CocktailDetail> { //แก้ตตรง FoodDetail
+  //   return this.http.get<FoodDetail>(`${this.apiCocktail}${cocktailId}`);
+  // }
   
 
 }

@@ -12,18 +12,14 @@ export class CardHomeComponent {
   @Input() description: string = '';
   @Input() imageUrl: string = '';
   isVeg : boolean = true
-  isCocktail : boolean = false;
   
+
   viewMenu(){
-    
-    this.router.navigate(['/menu']);
-  }
-  SelectVeg(){
-    this.isVeg = true;
-    this.isCocktail =false;
-  }
-  SelectCocktail(){
-    this.isVeg = false;
-    this.isCocktail =true;
+    if(this.title==="The Vegan Food"){
+      this.router.navigate(['/menu']);
+    }
+    else if(this.title==="The Cocktail"){
+      this.router.navigate(['/cocktail']);  
+    }
   }
 }

@@ -1,18 +1,18 @@
 <div class="food-card">
-    <div class="food-card-content">
-      <div class="food-card-header">
-        <h1>{{ title }}</h1>
+  <div class="food-card-content">
+    <div class="food-card-header">
+      <h1>{{ title }}</h1>
+    </div>
+    <div class="food-card-body">
+      <div class="food-card-image">
+        <img [src]="imageUrl" [alt]="title">
       </div>
-      <div class="food-card-body">
-        <div class="food-card-image">
-          <img [src]="imageUrl" [alt]="title">
-        </div>
-        <div class="food-card-details">
-          <p>{{ description }}</p>
-          <button class="view-menu" (click)="viewMenu()">View Menu</button>
-        </div>
-      </div>
-      <div class="food-card-icons">
+      <div class="food-card-details">
+        <p>{{ description }}</p>
+        <button class="view-menu" (click)="viewMenu()">View Menu</button>
       </div>
     </div>
+    <div class="food-card-icons">
+    </div>
+  </div>
 </div>

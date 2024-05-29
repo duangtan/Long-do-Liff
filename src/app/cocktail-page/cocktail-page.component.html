@@ -1,0 +1,44 @@
+<div class="header">
+    <app-header></app-header>
+  </div>
+  
+  <div class="container">
+    <div class="select-home-button">
+      <div class="home">
+        <button type="button" (click)="Home()">Home</button>
+      </div>
+      <div class="select-fav">
+        <span>show Food : </span>
+        <select [(ngModel)]="selectedOption" (change)="onOptionChange()">
+            <option value="all">All</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+        </select>
+      </div>
+    </div>
+    <div class="title-container">
+      <h2 class="title">The Cocktail</h2>
+    </div>
+    
+    
+    <div *ngIf="selectedOption==='all'">
+      <app-card-list 
+      [selectedOption]="selectedOption"
+      [isCocktailPage]="isCocktailPage">
+    </app-card-list>
+    </div>
+  
+    <div *ngIf="selectedOption==='easy'" >
+      <app-card-list 
+      [selectedOption]="selectedOption"
+      [isCocktailPage]="isCocktailPage">
+    </app-card-list>
+    </div>
+  
+    <div *ngIf="selectedOption==='medium'" >
+      <app-card-list 
+      [selectedOption]="selectedOption"
+      [isCocktailPage]="isCocktailPage">
+      </app-card-list>
+    </div>
+  

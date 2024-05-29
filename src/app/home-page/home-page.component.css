@@ -1,35 +1,107 @@
-body{
-  margin: 0px;
- }
- .bg {
-  background-image: url('/assets/images/food-home.png');
+.container {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
   display: flex;
-  flex-direction: column;  
-  height: 100vh;
-  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+}
+.header{
+  width: 100%;
 }
 
- .icon-button img {
-  width:  40px;
-  height: 40px;
+.main-content {
   display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 20px;
 }
 
-.header {
+.image-section img {
+  width: 90%;
+  height: auto;
+}
+
+.text-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-section h2 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.con-card {
+  padding: 20px;
   text-align: center;
+  margin-top: 20px;
+  width: 80%;
 }
 
-.header h1 {
-  display: inline; 
-  
-}
-.header-text{
-  background-color: aliceblue;
+.view-menu-btn {
+  background-color: #00bcd4;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
-.header .icon-buttons {
- padding: 20px;
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
-.icon-buttons .icon-button {
-  margin-right: 10px; 
+
+.vegan-btn,
+.cocktail-btn {
+  background-color: #9e9e9e;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+
+  .main-content {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+  }
+
+  .image-section img {
+      width: 100%;
+  }
+
+  .con-card {
+      width: 100%;
+      padding:0;
+  }
+
+  .buttons {
+      flex-direction: row;
+      margin-top: 0;
+  }
+
+  .vegan-btn,
+  .cocktail-btn {
+      margin-top: 10px ;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-section h2 {
+      font-size: 28px;
+  }
+
+  .vegan-btn,
+  .cocktail-btn {
+      padding: 8px 16px;
+  }
 }

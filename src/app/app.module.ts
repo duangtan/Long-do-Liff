@@ -8,9 +8,11 @@ import { AppComponent } from './app.component';
 import { FoodPageComponent } from './food-page/food-page.component';
 import { DetailFoodComponent } from './detail-food/detail-food.component';
 import { FormsModule } from '@angular/forms';
-import { CardComponent } from './card/card.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { CardListComponent } from './card-list/card-list.component';
 import { CardHomeComponent } from './card-home/card-home.component';
+import { CocktailPageComponent } from './cocktail-page/cocktail-page.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -18,9 +20,11 @@ import { CardHomeComponent } from './card-home/card-home.component';
     AppComponent,
     FoodPageComponent,
     DetailFoodComponent,
-    CardComponent,
     HomePageComponent,
-    CardHomeComponent
+    CardListComponent,
+    CardHomeComponent,
+    CocktailPageComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

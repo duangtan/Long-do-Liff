@@ -8,20 +8,16 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent {
   constructor(private router: Router) {}
-  isVeg : boolean = true
-  isCocktail : boolean = false;
-  
-  viewMenu(){
-    this.router.navigate(['/menu']);
-  }
-  
   showCocktail = false;
+  showVeg = true;
 
   showVegCard() {
     this.showCocktail = false;
+    this.showVeg = true;
   }
 
   showCocktailCard() {
     this.showCocktail = true;
+    this.showVeg = false;
   }
 }

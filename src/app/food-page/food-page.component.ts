@@ -17,19 +17,21 @@ export interface foodlist{
 })
 export class FoodPageComponent implements OnInit {
 
-  constructor(private apiService: ServiceService,private router: Router) {}
+  
+  constructor(private router: Router) {}
   @Input() displayedFoods: any[] = [];
 
   ngOnInit(): void {
+    
   }
-
+  isVeganPage = true;
 
   selectedOption: string = 'all';
   onOptionChange() {
     console.log('Selected option:', this.selectedOption);
   }
-  onDisplayedFoodsChange(displayedFoods: any[]) {
+  Home(){
+    this.router.navigate(['/home']); 
   }
-
 
 }
