@@ -9,6 +9,8 @@ import { FoodPageComponent } from './food-page/food-page.component';
 import { DetailFoodComponent } from './detail-food/detail-food.component';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './card/card.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { CardHomeComponent } from './card-home/card-home.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { CardComponent } from './card/card.component';
     AppComponent,
     FoodPageComponent,
     DetailFoodComponent,
-    CardComponent
+    CardComponent,
+    HomePageComponent,
+    CardHomeComponent
   ],
   imports: [
     BrowserModule,
