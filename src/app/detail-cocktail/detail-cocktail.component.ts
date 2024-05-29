@@ -1,0 +1,62 @@
+import { Component } from '@angular/core';
+import { ServiceService } from '../service.service';
+import { ActivatedRoute, Router } from '@angular/router';
+export interface CocktailDetail{
+  title : string;
+  difficulty : string;
+  image : any;
+  id : string;
+  portion : string;
+  time : string;
+  description : string;
+  ingredients : string;
+  method : string;
+}
+@Component({
+  selector: 'app-detail-cocktail',
+  templateUrl: './detail-cocktail.component.html',
+  styleUrls: ['./detail-cocktail.component.css']
+})
+export class DetailCocktailComponent {
+  cocktail_detail: CocktailDetail | null = null;
+  cocktailId!: string;
+   
+
+  constructor(private apiService: ServiceService,private route: ActivatedRoute,private router: Router) { }
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.cocktailId = params['cocktailId'];
+      this.getCocktailDetail(this.cocktailId);
+    });
+  }
+  getCocktailDetail(foodId: string): void {
+    this.apiService.getFoodById(foodId).subscribe(
+      (data: CocktailDetail) => {
+        this.cocktail_detail = data;  
+        this.convertData(this.cocktail_detail);
+      },
+      (error) => {
+        console.error('Error fetching food details:', error);
+      }
+    );
+  }
+  
+  goHome(){
+    this.router.navigate(['/cocktail']); 
+  }
+
+  convertData(data:any):CocktailDetail{
+    return {
+      title: data.title || "",
+      difficulty: data.difficulty || "",
+      image: data.image || "",
+      id: data.id || "",
+      portion: data.portion || "",
+      time: data.time || "",
+      description: data.description || "",
+      ingredients: data.ingredients.join("\n") || "", // แปลงอาเรย์ของส่วนประกอบให้เป็น string โดยใช้ join
+      method: data.method.map((step: any) => Object.values(step)[0]).join("\n") || "" // แปลงอาเรย์ของวิธีการทำเป็น string โดยใช้ map เพื่อดึงค่าของขั้นตอนแล้วใช้ join
+    };
+  }
+}

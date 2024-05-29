@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'menu', component: FoodPageComponent },
   { path: 'cocktail', component: CocktailPageComponent },
   { path: 'api/:foodId', component: DetailFoodComponent },
+  { path: 'api/:cocktailId', component: CocktailPageComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 

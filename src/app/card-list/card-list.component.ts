@@ -91,8 +91,11 @@ export class CardListComponent {
     return _data;
   }
 
-  getDetail(foodId: string) {
+  getDetailFood(foodId: string) {
     this.router.navigate(['/api', foodId]); 
+  }
+  getDetailCocktail(cocktailId: string) {
+    this.router.navigate(['/api', cocktailId]); 
   }
 
   onOptionChangeFood() {

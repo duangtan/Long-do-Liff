@@ -13,6 +13,7 @@ import { CardListComponent } from './card-list/card-list.component';
 import { CardHomeComponent } from './card-home/card-home.component';
 import { CocktailPageComponent } from './cocktail-page/cocktail-page.component';
 import { HeaderComponent } from './header/header.component';
+import { DetailCocktailComponent } from './detail-cocktail/detail-cocktail.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HeaderComponent } from './header/header.component';
     CardListComponent,
     CardHomeComponent,
     CocktailPageComponent,
-    HeaderComponent
+    HeaderComponent,
+    DetailCocktailComponent
   ],
   imports: [
     BrowserModule,

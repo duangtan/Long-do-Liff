@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FoodDetail } from './detail-food/detail-food.component';
 import { Observable } from 'rxjs';
+import { CocktailDetail } from './detail-cocktail/detail-cocktail.component';
 
 @Injectable({
   providedIn: 'root'
@@ -32,9 +33,9 @@ export class ServiceService {
     return this.http.get(this.apiCocktail,  { headers : this.headers2 });
   }
 
-  // getCocktailById(cocktailId: string): Observable<CocktailDetail> { //แก้ตตรง FoodDetail
-  //   return this.http.get<FoodDetail>(`${this.apiCocktail}${cocktailId}`);
-  // }
+  getCocktailById(cocktailId: string): Observable<CocktailDetail> { 
+    return this.http.get<FoodDetail>(`${this.apiCocktail}${cocktailId}`);
+  }
   
 
 }
