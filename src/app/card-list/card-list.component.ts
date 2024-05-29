@@ -92,10 +92,10 @@ export class CardListComponent {
   }
 
   getDetailFood(foodId: string) {
-    this.router.navigate(['/api', foodId]); 
+    this.router.navigate(['/apifood', foodId]); 
   }
   getDetailCocktail(cocktailId: string) {
-    this.router.navigate(['/api', cocktailId]); 
+    this.router.navigate(['/apicocktail', cocktailId]); 
   }
 
   onOptionChangeFood() {

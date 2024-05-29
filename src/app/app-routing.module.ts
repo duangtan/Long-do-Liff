@@ -10,8 +10,8 @@ const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'menu', component: FoodPageComponent },
   { path: 'cocktail', component: CocktailPageComponent },
-  { path: 'api/:foodId', component: DetailFoodComponent },
-  { path: 'api/:cocktailId', component: CocktailPageComponent },
+  { path: 'apifood/:foodId', component: DetailFoodComponent },
+  { path: 'apicocktail/:cocktailId', component: CocktailPageComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
