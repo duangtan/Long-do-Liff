@@ -1,76 +1,35 @@
-.food-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: linear-gradient(135deg, #e0f7fa, #80deea);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    margin: auto;
-  }
+body{
+  margin: 0px;
+ }
+ .bg {
+  background-image: url('/assets/images/food-home.png');
+  display: flex;
+  flex-direction: column;  
+  height: 100vh;
+  width: 100vw;
+}
+
+ .icon-button img {
+  width:  40px;
+  height: 40px;
+  display: flex;
+}
+
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  display: inline; 
   
-  .food-card-header h1 {
-    font-size: 2em;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  .food-card-body {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 10px;
-  }
-  
-  .food-card-image img {
-    border-radius: 10px;
-    max-width: 100px;
-    margin-right: 20px;
-  }
-  
-  .food-card-details h3 {
-    font-size: 1.2em;
-    margin: 0;
-  }
-  
-  .food-card-details p {
-    font-size: 0.9em;
-    margin: 5px 0;
-  }
-  
-  .food-card-rating {
-    display: flex;
-    align-items: center;
-  }
-  
-  .food-card-rating .stars {
-    margin-left: 10px;
-    color: orange;
-  }
-  
-  .view-menu {
-    background-color: #00bcd4;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  .food-card-icons {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 20px;
-  }
-  
-  .food-card-icons .icon-trash,
-  .food-card-icons .icon-save,
-  .food-card-icons .icon-like,
-  .food-card-icons .icon-share {
-    font-size: 1.5em;
-    cursor: pointer;
-  }
-  
+}
+.header-text{
+  background-color: aliceblue;
+}
+
+.header .icon-buttons {
+ padding: 20px;
+}
+.icon-buttons .icon-button {
+  margin-right: 10px; 
+}

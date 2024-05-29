@@ -24,5 +24,4 @@ export class HomePageComponent {
   showCocktailCard() {
     this.showCocktail = true;
   }
-  
 }

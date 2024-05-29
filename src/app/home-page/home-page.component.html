@@ -1,28 +1,31 @@
 <div class="bg">
-  <div class="img-home">
-      <div class="header">
-          <div class="icon-buttons">
-              <button (click)="showVegCard()" class="icon-button">
-                  <img src="assets/images/veg-out.png" alt="veg-outlet">
-              </button>
-              <button (click)="showCocktailCard()" class="icon-button">
-                  <img src="assets/images/cocktail-out.png" alt="cocktail-outlet">
-              </button>
-          </div>
-      </div>
-      <div class="card-container">
-          <app-card-home
-              *ngIf="!showCocktail"
-              title="The Vegan Food"
-              description="Based on plants (such as vegetables, grains, nuts and fruits) and foods made from plants."
-              imageUrl="assets/images/theVegan.png">
-          </app-card-home>
-          <app-card-home
-              *ngIf="showCocktail"
-              title="Cocktail Selection"
-              description="A cocktail is a mixed drink typically made with a distilled liquor (such as arrack, brandy, cachaça, gin, rum, tequila, vodka, or whiskey)."
-              imageUrl="assets/images/Cocktail.png">
-          </app-card-home>
-      </div>
-  </div>
+    <div class="img-home">
+        <div class="header">
+            <div class="header-text">
+                <h1>LONG DO</h1>
+            </div>
+            <div class="icon-buttons">
+                <button (click)="showVegCard()" class="icon-button">
+                    <img src="assets/images/veg-out.png" alt="veg-outlet">
+                </button>
+                <button (click)="showCocktailCard()" class="icon-button">
+                    <img src="assets/images/cocktail-out.png" alt="cocktail-outlet">
+                </button>
+            </div>
+        </div>
+        <div class="card-container">
+            <app-card-home
+                *ngIf="!showCocktail"
+                title="The Vegan Food"
+                description="Based on plants (such as vegetables, grains, nuts and fruits) and foods made from plants."
+                imageUrl="assets/images/theVegan.png">
+            </app-card-home>
+            <app-card-home
+                *ngIf="showCocktail"
+                title="Cocktail Selection"
+                description="A cocktail is a mixed drink typically made with a distilled liquor (such as arrack, brandy, cachaça, gin, rum, tequila, vodka, or whiskey)."
+                imageUrl="assets/images/Cocktail.png">
+            </app-card-home>
+        </div>
+    </div>
 </div>
