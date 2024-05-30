@@ -7,11 +7,13 @@
       <button class="menu-btn" (click)="goHome()">Home</button>
       <button class="login-btn">Log Out</button>
     </div>
-  </div>
+</div>
+<div class="container">
+    <div *ngIf="profile">
+        <h2>{{ profile.displayName }}</h2>
+        <img [src]="profile.pictureUrl" alt="Profile Picture">
+        <p>{{ profile.statusMessage }}</p>
+      </div>
+</div>
   
-  <div *ngIf="profile">
-    <h2>{{ profile.displayName }}</h2>
-    <img [src]="profile.pictureUrl" alt="Profile Picture">
-    <p>{{ profile.statusMessage }}</p>
-  </div>
   
