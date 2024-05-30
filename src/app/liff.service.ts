@@ -6,10 +6,9 @@ import liff from '@line/liff';
 })
 export class LiffService {
 
+  private profile: any;
+
   constructor() { }
-  ngOnInit() {
-    this.initializeLiff();
-  }
 
   initializeLiff() {
     liff.init({ liffId: '2005378766-8o1j06XX' })
@@ -26,12 +25,18 @@ export class LiffService {
   }
 
   getProfile() {
-    liff.getProfile()
+    return liff.getProfile()
       .then(profile => {
-        console.log(profile);
+        this.profile = profile;
+        return profile;
       })
       .catch((err: any) => {
         console.error('Error getting profile', err);
+        throw err;
       });
+  }
+
+  getProfileData() {
+    return this.profile;
   }
 }
