@@ -20,7 +20,7 @@ export class ProfilePageComponent implements OnInit{
   }
   Logout(){
     this.liffService.liffLogout();
-    console.log("logout");
+    
   }
       
     
