@@ -31,15 +31,15 @@ export class DetailCocktailComponent {
     });
   }
   getCocktailDetail(cocktailId: string): void {
-    this.apiService.getCocktailById(this.cocktailId).subscribe(
-      (data: CocktailDetail) => {
-        this.cocktail_detail = data;  
-        this.convertData(this.cocktail_detail);
-      },
-      (error) => {
-        console.error('Error fetching food details:', error);
-      }
-    );
+    // this.apiService.getCocktailById(this.cocktailId).subscribe(
+    //   (data: CocktailDetail) => {
+    //     this.cocktail_detail = data;  
+    //     this.convertData(this.cocktail_detail);
+    //   },
+    //   (error) => {
+    //     console.error('Error fetching food details:', error);
+    //   }
+    // );
   }
   
   goHome(){

@@ -42,16 +42,17 @@ export class CardListComponent {
       }, error => {
         console.error(error);
       });
-    } else if (this.isCocktailPage) {
-      this.apiService.getCocktail().subscribe((data: any) => {
-        this.cocktail_list = data; 
-        this.onOptionChangeCocktail();
-        console.log(this.selectedOption);
-        console.log("DisplayCocktail",this.displayedCocktails);
-      }, error => {
-        console.error(error);
-      });
-    }
+    } 
+    // else if (this.isCocktailPage) {
+    //   this.apiService.getCocktail().subscribe((data: any) => {
+    //     this.cocktail_list = data; 
+    //     this.onOptionChangeCocktail();
+    //     console.log(this.selectedOption);
+    //     console.log("DisplayCocktail",this.displayedCocktails);
+    //   }, error => {
+    //     console.error(error);
+    //   });
+    // }
     
   }
 
@@ -67,15 +68,15 @@ export class CardListComponent {
   }
 
   cocktailData : any[] = [];
-  getcocktailData(): void {
-    this.apiService.getCocktail().subscribe(
-      (data) => {
-        this.cocktailData.push(data);
-        this.convertData(this.cocktailData);
-        this.cocktail_list = this.convertData(this.cocktailData);    
-      },
-    );
-  }
+  // getcocktailData(): void {
+  //   this.apiService.getCocktail().subscribe(
+  //     (data) => {
+  //       this.cocktailData.push(data);
+  //       this.convertData(this.cocktailData);
+  //       this.cocktail_list = this.convertData(this.cocktailData);    
+  //     },
+  //   );
+  // }
 
   convertData(data:any):any[]{
     let _data =[];
