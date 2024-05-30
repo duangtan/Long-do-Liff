@@ -43,14 +43,15 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.liffService.initializeLiff();
+    
   }
 
-  async showProfile() {
-    try {
-      this.profile = await this.liffService.getProfile();
-    } catch (error) {
-      console.error('Error getting profile', error);
-    }
-  }
+  // async showProfile() {
+  //   try {
+  //     this.profile = await this.liffService.getProfile();
+  //   } catch (error) {
+  //     console.error('Error getting profile', error);
+  //   }
+  // }
 
 }
