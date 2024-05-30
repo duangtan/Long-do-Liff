@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LiffService } from '../liff.service';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router,private liffService: LiffService) {}
   showProfilePage(){
     this.router.navigate(['/profile']); 
+  }
+  Logout(){
+    this.liffService.liffLogout();
   }
 }

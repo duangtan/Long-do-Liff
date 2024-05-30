@@ -39,4 +39,7 @@ export class LiffService {
   getProfileData() {
     return this.profile;
   }
+  liffLogout() {
+    liff.logout();
+  }
 }

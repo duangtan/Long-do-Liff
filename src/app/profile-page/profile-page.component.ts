@@ -14,10 +14,12 @@ export class ProfilePageComponent implements OnInit{
   ngOnInit(): void {
     this.profile =  this.liffService.getProfileData();
     console.log("Profile",this.profile);
-    
   }
   goHome(){
     this.router.navigate(['/home']); 
+  }
+  Logout(){
+    this.liffService.liffLogout();
   }
       
     
