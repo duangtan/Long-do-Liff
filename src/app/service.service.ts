@@ -10,13 +10,19 @@ import { CocktailDetail } from './detail-cocktail/detail-cocktail.component';
 export class ServiceService {
   private apiFood = 'https://the-vegan-recipes-db.p.rapidapi.com/';
   private foodHeaders = new HttpHeaders({
-    'x-rapidapi-key': '64b6ec1b95msh824e810cc0b079dp19a41bjsn746c3081d0f2',
-    'x-rapidapi-host': 'the-vegan-recipes-db.p.rapidapi.com'
+    'X-RapidAPI-Key': '6b400bbdfdmsh540e5fa8dd67be9p1623cbjsnb0caaede9a2e',
+		'X-RapidAPI-Host': 'the-vegan-recipes-db.p.rapidapi.com'
+    //สำรอง
+    // 'X-RapidAPI-Key': 'c5ec4e3af6mshdda55716fb2da2ep115829jsnca3e7bb9f794',
+    // 'X-RapidAPI-Host': 'the-vegan-recipes-db.p.rapidapi.com'
   });
   private apiCocktail = 'https://the-cocktail-db3.p.rapidapi.com/';
   private cocktailHeaders = new HttpHeaders({
     'X-RapidAPI-Key': '29c5b6aea2msh1c59e5a232dfdcdp1dfbd4jsn091d2c13df9f',
     'X-RapidAPI-Host': 'the-cocktail-db3.p.rapidapi.com'
+    //สำรอง
+    // 'X-RapidAPI-Key': '6b400bbdfdmsh540e5fa8dd67be9p1623cbjsnb0caaede9a2e',
+    // 'X-RapidAPI-Host': 'the-cocktail-db3.p.rapidapi.com'
   });
   
   constructor(private http: HttpClient) {}
