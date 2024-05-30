@@ -14,6 +14,5 @@ export class HeaderComponent {
   }
   Logout(){
     this.liffService.liffLogout();
-    console.log("logout");
   }
 }
