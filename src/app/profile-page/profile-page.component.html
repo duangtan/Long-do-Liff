@@ -1,0 +1,17 @@
+<div class="header">
+    <div class="logo">
+      <h1>Long Do</h1>
+      <p>Delicious food, just do it.</p>
+    </div>
+    <div class="nav">
+      <button class="menu-btn" (click)="showProfile()">Home</button>
+      <button class="login-btn">Log Out</button>
+    </div>
+  </div>
+  
+  <div *ngIf="profile">
+    <h2>{{ profile.displayName }}</h2>
+    <img [src]="profile.pictureUrl" alt="Profile Picture">
+    <p>{{ profile.statusMessage }}</p>
+  </div>
+  

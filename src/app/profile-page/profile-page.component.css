@@ -1,0 +1,20 @@
+/* src/app/app.component.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo h1, .logo p {
+    margin: 0;
+  }
+  
+  .nav button {
+    margin-left: 10px;
+  }
+  
+  img {
+    max-width: 100px;
+    border-radius: 50%;
+  }
+  

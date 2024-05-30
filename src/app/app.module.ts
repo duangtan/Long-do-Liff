@@ -14,6 +14,7 @@ import { CardHomeComponent } from './card-home/card-home.component';
 import { CocktailPageComponent } from './cocktail-page/cocktail-page.component';
 import { HeaderComponent } from './header/header.component';
 import { DetailCocktailComponent } from './detail-cocktail/detail-cocktail.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { DetailCocktailComponent } from './detail-cocktail/detail-cocktail.compo
     CardHomeComponent,
     CocktailPageComponent,
     HeaderComponent,
-    DetailCocktailComponent
+    DetailCocktailComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,
