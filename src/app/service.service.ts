@@ -26,6 +26,8 @@ export class ServiceService {
   }
 
   getFoodById(foodId: string): Observable<FoodDetail> {
+    // const urlFood = `${this.apiFood}/${foodId}`;
+    // return this.http.get<FoodDetail>(urlFood);
     return this.http.get<FoodDetail>(`${this.apiFood}${foodId}`);
   }
 
