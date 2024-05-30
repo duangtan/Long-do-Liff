@@ -41,5 +41,6 @@ export class LiffService {
   }
   liffLogout() {
     liff.logout();
+    this.profile = "";
   }
 }
