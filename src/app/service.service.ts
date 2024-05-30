@@ -9,35 +9,32 @@ import { CocktailDetail } from './detail-cocktail/detail-cocktail.component';
 })
 export class ServiceService {
   private apiFood = 'https://the-vegan-recipes-db.p.rapidapi.com/';
-  private headers = new HttpHeaders({
+  private foodHeaders = new HttpHeaders({
     'x-rapidapi-key': '64b6ec1b95msh824e810cc0b079dp19a41bjsn746c3081d0f2',
-	  'x-rapidapi-host': 'the-vegan-recipes-db.p.rapidapi.com'
+    'x-rapidapi-host': 'the-vegan-recipes-db.p.rapidapi.com'
   });
   private apiCocktail = 'https://the-cocktail-db3.p.rapidapi.com/';
-  private headers2 = new HttpHeaders({
+  private cocktailHeaders = new HttpHeaders({
     'X-RapidAPI-Key': '29c5b6aea2msh1c59e5a232dfdcdp1dfbd4jsn091d2c13df9f',
     'X-RapidAPI-Host': 'the-cocktail-db3.p.rapidapi.com'
-  
   });
 
   constructor(private http: HttpClient) {}
+
   getVegFood() {
-    return this.http.get(this.apiFood,  { headers : this.headers } );
+    return this.http.get(this.apiFood, { headers: this.foodHeaders });
   }
 
   getFoodById(foodId: string): Observable<FoodDetail> {
-    // const urlFood = `${this.apiFood}/${foodId}`;
-    // return this.http.get<FoodDetail>(urlFood);
-    return this.http.get<FoodDetail>(`${this.apiFood}${foodId}`);
+    return this.http.get<FoodDetail>(`${this.apiFood}${foodId}`, { headers: this.foodHeaders });
   }
 
   getCocktail() {
-    return this.http.get(this.apiCocktail,  { headers : this.headers2 });
+    return this.http.get(this.apiCocktail, { headers: this.cocktailHeaders });
   }
 
-  // getCocktailById(cocktailId: string): Observable<CocktailDetail> { 
-  //   return this.http.get<CocktailDetail>(`${this.apiCocktail}${cocktailId}`);
-  // }
-  
+  getCocktailById(cocktailId: string): Observable<CocktailDetail> {
+    return this.http.get<CocktailDetail>(`${this.apiCocktail}${cocktailId}`, { headers: this.cocktailHeaders });
+  }
 
 }
