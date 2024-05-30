@@ -18,9 +18,14 @@ export class ServiceService {
     'X-RapidAPI-Key': '29c5b6aea2msh1c59e5a232dfdcdp1dfbd4jsn091d2c13df9f',
     'X-RapidAPI-Host': 'the-cocktail-db3.p.rapidapi.com'
   });
-
+  
   constructor(private http: HttpClient) {}
-
+  getApiFood(): string {
+    return this.apiFood;
+  }
+  getApiCocktail(): string {
+    return this.apiCocktail;
+  }
   getVegFood() {
     return this.http.get(this.apiFood, { headers: this.foodHeaders });
   }
