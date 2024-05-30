@@ -31,8 +31,6 @@ export class CardListComponent {
   constructor(private apiService: ServiceService,private router: Router,) {}
 
   ngOnInit(): void {
-    console.log("AB",this.isVeganPage);
-    
     if (this.isVeganPage) {
       this.apiService.getVegFood().subscribe((data: any) => {
         this.food_list = data; 
@@ -99,7 +97,6 @@ export class CardListComponent {
   }
 
   onOptionChangeFood() {
-    console.log("entry",this.displayedFoods);
     if (this.selectedOption === 'all') {
       this.displayedFoods = [...this.food_list]; ;
     } else if (this.selectedOption === 'easy') { 
@@ -117,6 +114,5 @@ export class CardListComponent {
     } else if (this.selectedOption === 'medium') {
       this.displayedCocktails = this.cocktail_list.filter(cocktail => cocktail.difficulty === 'Medium');
     }
-    console.log("entryC",this.displayedCocktails);
   }
 }
