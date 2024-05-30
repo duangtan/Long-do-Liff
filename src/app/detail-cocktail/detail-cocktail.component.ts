@@ -30,7 +30,7 @@ export class DetailCocktailComponent {
       this.getCocktailDetail(this.cocktailId);
     });
   }
-  getCocktailDetail(foodId: string): void {
+  getCocktailDetail(cocktailId: string): void {
     this.apiService.getCocktailById(this.cocktailId).subscribe(
       (data: CocktailDetail) => {
         this.cocktail_detail = data;  
