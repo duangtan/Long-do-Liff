@@ -43,6 +43,8 @@ export class DetailFoodComponent implements OnInit {
         console.error('Error fetching food details:', error);
       }
     );
+    console.log(this.food_detail);
+    
   }
   
   goHome(){
