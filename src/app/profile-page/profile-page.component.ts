@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LiffService } from '../liff.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-page',
@@ -9,11 +10,13 @@ import { LiffService } from '../liff.service';
 export class ProfilePageComponent implements OnInit{
   profile: any;
 
-  constructor(private liffService: LiffService) {}
+  constructor(private liffService: LiffService,private router: Router) {}
   ngOnInit(): void {
     this.profile =  this.liffService.getProfile();
   }
-      
+  goHome(){
+    this.router.navigate(['/home']); 
+  }
       
     
   
