@@ -13,7 +13,7 @@ export class ProfilePageComponent implements OnInit{
   constructor(private liffService: LiffService,private router: Router) {}
   ngOnInit(): void {
     this.profile =  this.liffService.getProfileData();
-    console.log(this.profile);
+    console.log("Profile",this.profile);
     
   }
   goHome(){
