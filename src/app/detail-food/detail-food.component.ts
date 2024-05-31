@@ -2,17 +2,29 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceService } from '../service.service';
 
-export interface FoodDetail{
-  title : string;
-  difficulty : string;
-  image : any;
-  id : string;
-  portion : string;
-  time : string;
-  description : string;
-  ingredients : string;
-  method : string;
+// export interface FoodDetail{
+//   title : string;
+//   difficulty : string;
+//   image : any;
+//   id : string;
+//   portion : string;
+//   time : string;
+//   description : string;
+//   ingredients : string;
+//   method : string;
+// }
+export interface FoodDetail {
+  id: string;
+  title: string;
+  difficulty: string;
+  portion: string;
+  time: string;
+  description: string;
+  ingredients: string[]; // เปลี่ยนเป็น string[]
+  method: { [key: string]: string }[];
+  image: string;
 }
+
 
 @Component({
   selector: 'app-detail-food',

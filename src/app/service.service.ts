@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FoodDetail } from './detail-food/detail-food.component';
-import { Observable, catchError } from 'rxjs';
+import { Observable, catchError, map } from 'rxjs';
 import { CocktailDetail } from './detail-cocktail/detail-cocktail.component';
 
 @Injectable({
@@ -26,6 +26,8 @@ export class ServiceService {
   });
   private mockFoodUrl = 'assets/list_of_food.json';
   private mockCocktailUrl = 'assets/list_of_cocktail.json';
+  private mockFoodDetailUrl = 'assets/mockFoodDetail.json';
+  private mockCocktailDetailUrl = 'assets/mockCocktailDetail.json';
   
   constructor(private http: HttpClient) {}
   getVegFood() {
@@ -36,7 +38,26 @@ export class ServiceService {
   }
 
   getFoodById(foodId: string): Observable<FoodDetail> {
-    return this.http.get<FoodDetail>(`${this.apiFood}${foodId}`, { headers: this.foodHeaders });
+    //return this.http.get<FoodDetail>(`${this.apiFood}${foodId}`, { headers: this.foodHeaders });
+    return this.http.get<FoodDetail>(`${this.apiFood}${foodId}`, { headers: this.foodHeaders }).pipe(
+      catchError(() => {
+        return this.http.get<{ id: string, title: string, difficulty: string, portion: string, time: string, description: string, ingredients: string[], method: { [key: string]: string }[], image: string }>(this.mockFoodDetailUrl).pipe(
+          map(data => {
+            return {
+              id: data.id,
+              title: data.title,
+              difficulty: data.difficulty,
+              portion: data.portion,
+              time: data.time,
+              description: data.description,
+              ingredients: data.ingredients,
+              method: data.method,
+              image: data.image
+            };
+          })
+        );
+      })
+    );
   }
 
   getCocktail() {
