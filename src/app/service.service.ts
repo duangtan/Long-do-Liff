@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FoodDetail } from './detail-food/detail-food.component';
-import { Observable } from 'rxjs';
+import { Observable, catchError } from 'rxjs';
 import { CocktailDetail } from './detail-cocktail/detail-cocktail.component';
 
 @Injectable({
@@ -10,7 +10,7 @@ import { CocktailDetail } from './detail-cocktail/detail-cocktail.component';
 export class ServiceService {
   private apiFood = 'https://the-vegan-recipes-db.p.rapidapi.com/';
   private foodHeaders = new HttpHeaders({
-    'X-RapidAPI-Key': '6b400bbdfdmsh540e5fa8dd67be9p1623cbjsnb0caaede9a2e',
+    'X-RapidAPI-Key': 'b400bbdfdmsh540e5fa8dd67be9p1623cbjsnb0caaede9a2e',
 		'X-RapidAPI-Host': 'the-vegan-recipes-db.p.rapidapi.com'
     //สำรอง
     // 'X-RapidAPI-Key': 'c5ec4e3af6mshdda55716fb2da2ep115829jsnca3e7bb9f794',
@@ -24,10 +24,15 @@ export class ServiceService {
     // 'X-RapidAPI-Key': '6b400bbdfdmsh540e5fa8dd67be9p1623cbjsnb0caaede9a2e',
     // 'X-RapidAPI-Host': 'the-cocktail-db3.p.rapidapi.com'
   });
+  private mockFoodUrl = 'assets/list_of_food.json';
+  private mockCocktailUrl = 'assets/list_of_cocktail.json';
   
   constructor(private http: HttpClient) {}
   getVegFood() {
-    return this.http.get(this.apiFood, { headers: this.foodHeaders });
+    //return this.http.get(this.apiFood, { headers: this.foodHeaders });
+    return this.http.get(this.apiFood, { headers: this.foodHeaders }).pipe(
+      catchError(() => this.http.get(this.mockFoodUrl))
+    );
   }
 
   getFoodById(foodId: string): Observable<FoodDetail> {
@@ -35,7 +40,10 @@ export class ServiceService {
   }
 
   getCocktail() {
-    return this.http.get(this.apiCocktail, { headers: this.cocktailHeaders });
+    //return this.http.get(this.apiCocktail, { headers: this.cocktailHeaders });
+    return this.http.get(this.apiCocktail, { headers: this.cocktailHeaders }).pipe(
+      catchError(() => this.http.get(this.mockCocktailUrl))
+    );
   }
 
   getCocktailById(cocktailId: string): Observable<CocktailDetail> {
