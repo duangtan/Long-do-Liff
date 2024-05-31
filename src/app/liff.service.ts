@@ -44,4 +44,5 @@ export class LiffService {
     liff.logout();
     liff.login();
   }
+
 }
