@@ -72,7 +72,8 @@ export class ServiceService {
     //return this.http.get<CocktailDetail>(`${this.apiCocktail}${cocktailId}`, { headers: this.cocktailHeaders });
     return this.http.get<CocktailDetail>(`${this.apiCocktail}${cocktailId}`, { headers: this.cocktailHeaders }).pipe(
       catchError(() => {
-        return this.http.get<{ id: string, title: string, difficulty: string, portion: string, time: string, description: string, ingredients: string[], method: { [key: string]: string }[], image: string }>(this.mockCocktailUrl).pipe(
+        return this.http.get<{ id: string, title: string, difficulty: string, portion: string, time: string, description: string, ingredients: string[], method: { [key: string]: string }[], image: string }>
+        (this.mockCocktailDetailUrl).pipe(
           map(data => {
             return {
               id: data.id,
