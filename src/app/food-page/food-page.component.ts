@@ -19,7 +19,7 @@ export class FoodPageComponent implements OnInit {
 
   
   constructor(private router: Router) {}
-  @Input() displayedFoods: any[] = [];
+  //@Input() displayedFoods: any[] = [];
 
   ngOnInit(): void {
     

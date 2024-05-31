@@ -52,42 +52,6 @@ export class CardListComponent {
     }
   }
 
-  foodData : any[] = [];
-  getFoodData(): void {
-    this.apiService.getVegFood().subscribe(
-      (data) => {
-        this.foodData.push(data);
-        this.convertData(this.foodData);
-        this.food_list = this.convertData(this.foodData);    
-      },
-    );
-  }
-
-  cocktailData : any[] = [];
-  getcocktailData(): void {
-    this.apiService.getCocktail().subscribe(
-      (data) => {
-        this.cocktailData.push(data);
-        this.convertData(this.cocktailData);
-        this.cocktail_list = this.convertData(this.cocktailData);    
-      },
-    );
-  }
-
-  convertData(data:any):any[]{
-    let _data =[];
-    for(let i=0;i<data.length;i++){
-      _data.push({
-        'title': (data[i]['title']||""),
-        'difficulty': (data[i]['difficulty']||""),
-        'image' : (data[i]['image']||""),
-        'id' : (data[i]['id']||""),
-      })
-      console.log("This",data.length);
-    }
-    return _data;
-  }
-
   getDetailFood(foodId: string) {
     this.router.navigate(['/apifood', foodId]); 
   }
