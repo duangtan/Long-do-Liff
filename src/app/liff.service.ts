@@ -42,7 +42,9 @@ export class LiffService {
   
   liffLogout() {
     liff.logout();
-    liff.closeWindow();
+    const os = liff.getOS();
+    console.log('Platform:', os);
+    //liff.closeWindow();
   }
 
 }
