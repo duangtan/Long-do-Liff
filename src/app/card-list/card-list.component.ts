@@ -6,7 +6,6 @@ export interface foodlist{
   difficulty : string;
   image : any;
   id : string;
-  test:string;
 }
 export interface cocktaillist{
   title : string;
@@ -57,6 +56,7 @@ export class CardListComponent {
   getFoodData(): void {
     this.apiService.getVegFood().subscribe(
       (data) => {
+        
         this.foodData.push(data);
         this.convertData(this.foodData);
         this.food_list = this.convertData(this.foodData);    
@@ -116,12 +116,3 @@ export class CardListComponent {
     }
   }
 }
-
-
-
-
-
-
-
-
-//แก้ convert & interface
