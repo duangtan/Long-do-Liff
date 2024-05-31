@@ -44,7 +44,15 @@ export class LiffService {
     liff.logout();
     const os = liff.getOS();
     console.log('Platform:', os);
-    //liff.closeWindow();
+    if(os==="web"){
+      if (liff.isLoggedIn()) {
+        this.getProfile();
+      } else {
+        liff.login();
+        liff.getProfile();
+      }
+    }else{
+      liff.closeWindow();
+    }
   }
-
 }
