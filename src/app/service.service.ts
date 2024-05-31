@@ -41,7 +41,8 @@ export class ServiceService {
     //return this.http.get<FoodDetail>(`${this.apiFood}${foodId}`, { headers: this.foodHeaders });
     return this.http.get<FoodDetail>(`${this.apiFood}${foodId}`, { headers: this.foodHeaders }).pipe(
       catchError(() => {
-        return this.http.get<{ id: string, title: string, difficulty: string, portion: string, time: string, description: string, ingredients: string[], method: { [key: string]: string }[], image: string }>(this.mockFoodDetailUrl).pipe(
+        return this.http.get<{ id: string, title: string, difficulty: string, portion: string, time: string, description: string, ingredients: string[], method: { [key: string]: string }[], image: string }>
+        (this.mockFoodDetailUrl).pipe(
           map(data => {
             return {
               id: data.id,

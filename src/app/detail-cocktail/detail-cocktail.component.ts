@@ -1,16 +1,27 @@
 import { Component } from '@angular/core';
 import { ServiceService } from '../service.service';
 import { ActivatedRoute, Router } from '@angular/router';
-export interface CocktailDetail{
-  title : string;
-  difficulty : string;
-  image : any;
-  id : string;
-  portion : string;
-  time : string;
-  description : string;
-  ingredients : string[];
-  method : { [key: string]: string }[];
+// export interface CocktailDetail{
+//   title : string;
+//   difficulty : string;
+//   image : string;
+//   id : string;
+//   portion : string;
+//   time : string;
+//   description : string;
+//   ingredients : string[];
+//   method : { [key: string]: string }[];
+// }
+export interface CocktailDetail {
+  id: string;
+  title: string;
+  difficulty: string;
+  portion: string;
+  time: string;
+  description: string;
+  ingredients: string[]; 
+  method: { [key: string]: string }[];
+  image: string;
 }
 @Component({
   selector: 'app-detail-cocktail',
