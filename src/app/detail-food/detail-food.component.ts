@@ -2,17 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceService } from '../service.service';
 
-// export interface FoodDetail{
-//   title : string;
-//   difficulty : string;
-//   image : any;
-//   id : string;
-//   portion : string;
-//   time : string;
-//   description : string;
-//   ingredients : string;
-//   method : string;
-// }
 export interface FoodDetail {
   id: string;
   title: string;
@@ -25,7 +14,6 @@ export interface FoodDetail {
   image: string;
 }
 
-
 @Component({
   selector: 'app-detail-food',
   templateUrl: './detail-food.component.html',
@@ -34,7 +22,6 @@ export interface FoodDetail {
 export class DetailFoodComponent implements OnInit {
   food_detail: FoodDetail | null = null;
   foodId!: string;
-   
 
   constructor(private apiService: ServiceService,private route: ActivatedRoute,private router: Router) { }
 

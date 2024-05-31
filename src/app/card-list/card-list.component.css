@@ -75,7 +75,6 @@
   @media only screen and (max-width: 650px) {
     .food-item {
       width: calc(40% - 20px);
-      /* width: 300px; */
     }
   }
   
