@@ -42,7 +42,7 @@ export class LiffService {
   
   liffLogout() {
     liff.logout();
-    liff.login();
+    liff.closeWindow();
   }
 
 }

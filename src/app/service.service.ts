@@ -25,7 +25,6 @@ export class ServiceService {
     // 'X-RapidAPI-Host': 'the-cocktail-db3.p.rapidapi.com'
   });
 
-  //Mock ค่า
   private mockFoodUrl = 'assets/list_of_food.json';
   private mockCocktailUrl = 'assets/list_of_cocktail.json';
   private mockFoodDetailUrl = 'assets/mockFoodDetail.json';
