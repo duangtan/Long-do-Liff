@@ -50,7 +50,6 @@ export class CardListComponent {
         console.error(error);
       });
     }
-    
   }
 
   foodData : any[] = [];

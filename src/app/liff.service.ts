@@ -28,7 +28,7 @@ export class LiffService {
     return liff.getProfile()
       .then(profile => {
         this.profile = profile;
-        return profile;
+        return this.profile;
       })
       .catch((err: any) => {
         console.error('Error getting profile', err);
