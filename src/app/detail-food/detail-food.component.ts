@@ -20,7 +20,7 @@ export interface FoodDetail {
   portion: string;
   time: string;
   description: string;
-  ingredients: string[]; // เปลี่ยนเป็น string[]
+  ingredients: string[]; 
   method: { [key: string]: string }[];
   image: string;
 }

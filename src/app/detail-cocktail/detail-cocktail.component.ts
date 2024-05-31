@@ -9,8 +9,8 @@ export interface CocktailDetail{
   portion : string;
   time : string;
   description : string;
-  ingredients : string;
-  method : string;
+  ingredients : string[];
+  method : { [key: string]: string }[];
 }
 @Component({
   selector: 'app-detail-cocktail',
