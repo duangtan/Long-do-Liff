@@ -32,18 +32,24 @@ export class ServiceService {
   
   constructor(private http: HttpClient) {}
   getVegFood() {
-    //return this.http.get(this.apiFood, { headers: this.foodHeaders });
     return this.http.get(this.apiFood, { headers: this.foodHeaders }).pipe(
       catchError(() => this.http.get(this.mockFoodUrl))
     );
   }
 
   getFoodById(foodId: string): Observable<FoodDetail> {
-    //return this.http.get<FoodDetail>(`${this.apiFood}${foodId}`, { headers: this.foodHeaders });
     return this.http.get<FoodDetail>(`${this.apiFood}${foodId}`, { headers: this.foodHeaders }).pipe(
       catchError(() => {
-        return this.http.get<{ id: string, title: string, difficulty: string, portion: string, time: string, description: string, ingredients: string[], method: { [key: string]: string }[], image: string }>
-        (this.mockFoodDetailUrl).pipe(
+        return this.http.get<{ 
+          id: string, 
+          title: string, 
+          difficulty: string, 
+          portion: string, 
+          time: string, 
+          description: string, 
+          ingredients: string[], 
+          method: { [key: string]: string }[], 
+          image: string }>(this.mockFoodDetailUrl).pipe(
           map(data => {
             return {
               id: data.id,
@@ -63,17 +69,24 @@ export class ServiceService {
   }
 
   getCocktail() {
-    //return this.http.get(this.apiCocktail, { headers: this.cocktailHeaders });
     return this.http.get(this.apiCocktail, { headers: this.cocktailHeaders }).pipe(
       catchError(() => this.http.get(this.mockCocktailUrl))
     );
   }
 
   getCocktailById(cocktailId: string): Observable<CocktailDetail> {
-    //return this.http.get<CocktailDetail>(`${this.apiCocktail}${cocktailId}`, { headers: this.cocktailHeaders });
     return this.http.get<CocktailDetail>(`${this.apiCocktail}${cocktailId}`, { headers: this.cocktailHeaders }).pipe(
       catchError(() => {
-        return this.http.get<{ id: string, title: string, difficulty: string, portion: string, time: string, description: string, ingredients: string[], method: { [key: string]: string }[], image: string }>
+        return this.http.get<{ 
+          id: string, 
+          title: string, 
+          difficulty: string, 
+          portion: string, 
+          time: string, 
+          description: string, 
+          ingredients: string[], 
+          method: { [key: string]: string }[], 
+          image: string }>
         (this.mockCocktailDetailUrl).pipe(
           map(data => {
             return {

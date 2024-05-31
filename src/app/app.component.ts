@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import liff from '@line/liff';
 import { LiffService } from './liff.service';
 
 @Component({
