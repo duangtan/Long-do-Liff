@@ -12,6 +12,10 @@
       
       <div class="text-section">
         <h2>LONG DO</h2>
+        <div class="buttons">
+          <button class="vegan-btn" (click)="showVegCard()">Vegan</button>
+          <button class="cocktail-btn" (click)="showCocktailCard()">Cocktail</button>
+        </div>
         <div class="con-card">
             <app-card-home
                 *ngIf="showVeg"
@@ -26,10 +30,7 @@
                 imageUrl="assets/images/Cocktail.png">
             </app-card-home>
         </div>     
-        <div class="buttons">
-            <button class="vegan-btn" (click)="showVegCard()">Vegan</button>
-            <button class="cocktail-btn" (click)="showCocktailCard()">Cocktail</button>
-        </div>
+        
       </div>
     </div>
   </div>

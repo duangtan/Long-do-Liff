@@ -65,6 +65,8 @@
   margin-left: 10px;
   margin-right: 20px;
   border-radius: 20px;
+  margin-bottom: 50px;
+  width: 500px;
 }
 
 /* Media Queries */
@@ -104,5 +106,6 @@
   .vegan-btn,
   .cocktail-btn {
       padding: 8px 16px;
+      width: 100px;
   }
 }
