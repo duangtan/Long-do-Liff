@@ -39,6 +39,7 @@
   text-align: center;
   margin-top: 20px;
   width: 80%;
+  margin-bottom: 30px;
 }
 
 .view-menu-btn {
@@ -65,8 +66,8 @@
   margin-left: 10px;
   margin-right: 20px;
   border-radius: 20px;
-  margin-bottom: 50px;
-  width: 500px;
+  margin-bottom: 20px;
+  width: 100px;
 }
 
 /* Media Queries */
