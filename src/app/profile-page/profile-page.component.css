@@ -1,11 +1,11 @@
-* {
+/* * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
   
   body {
-    /* font-family: Arial, sans-serif; */
+    font-family: Arial, sans-serif; 
     background-color: #f4f4f4;
     color: #333;
   }
@@ -94,4 +94,74 @@
     font-size: 16px;
     color: #666;
   }
-   
+    */
+.con-head {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo h1 {
+  margin-left: 30px;
+  font-size: 24px;
+  color: #21A366;
+}
+
+.logo p {
+  margin-left: 30px;
+  font-size: 14px;
+  color: #666;
+}
+
+.nav .menu-btn,
+.nav .login-btn {
+  background-color: #21A366;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+@media (max-width: 768px) {
+  .header {
+      flex-direction: row;
+  }
+
+  .logo h1,
+  .logo p {
+      margin-left: 10px;
+  }
+
+  .nav {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+  }
+
+  .nav .menu-btn,
+  .nav .login-btn {
+      margin: 10px;
+  }
+}  
+@media (max-width: 480px) {
+  .logo h1 {
+      font-size: 20px;
+  }
+
+  .logo p {
+      font-size: 12px;
+  }
+}
