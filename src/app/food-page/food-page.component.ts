@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ServiceService } from '../service.service';
 import { Router } from '@angular/router';
 
 
@@ -19,7 +18,6 @@ export class FoodPageComponent implements OnInit {
 
   
   constructor(private router: Router) {}
-  //@Input() displayedFoods: any[] = [];
 
   ngOnInit(): void {
     
