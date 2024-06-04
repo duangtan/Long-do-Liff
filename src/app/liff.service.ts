@@ -27,6 +27,7 @@ export class LiffService {
   getProfile() {
     return liff.getProfile()
       .then(profile => {
+        console.log('sdsds');
         this.profile = profile;
         return this.profile;
       })
